@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { ImageBuilderComponent } from './image-builder/image-builder.component'; // Import your new component
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'image-builder', component: ImageBuilderComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
