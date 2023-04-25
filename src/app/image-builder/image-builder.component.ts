@@ -72,12 +72,12 @@ export class ImageBuilderComponent implements OnInit {
   loadImages(category: keyof ImageMap) {
     console.log("category", category);
     const imageMap: ImageMap = {
-      vagina: [
+      vagina: [ // cuales son las imagenes?
         {id: "vagina1", imageUrl: 'vagina-image-1.jpg'},
         {id: "vagina2", imageUrl: 'vagina-image-2.jpg'},
         {id: "vagina3", imageUrl: 'vagina-image-3.jpg'}
       ],
-      labios: [
+      labios: [ // ok
         {id: "labios1", imageUrl: '../assets/VULVATAR_ELEMENTOS/LABIOS/01.png'},
         {id: "labios2", imageUrl: '../assets/VULVATAR_ELEMENTOS/LABIOS/02.png'},
         {id: "labios3", imageUrl: '../assets/VULVATAR_ELEMENTOS/LABIOS/03.png'},
@@ -89,7 +89,7 @@ export class ImageBuilderComponent implements OnInit {
         {id: "labios9", imageUrl: '../assets/VULVATAR_ELEMENTOS/LABIOS/09.png'},
         {id: "labios10", imageUrl: '../assets/VULVATAR_ELEMENTOS/LABIOS/10.png'}
       ],
-      clitoris: [
+      clitoris: [ // ok
         {id: "clitoris1", imageUrl: '../assets/VULVATAR_ELEMENTOS/CLITORIS/01.png'},
         {id: "clitoris2", imageUrl: '../assets/VULVATAR_ELEMENTOS/CLITORIS/02.png'},
         {id: "clitoris3", imageUrl: '../assets/VULVATAR_ELEMENTOS/CLITORIS/03.png'},
@@ -113,7 +113,7 @@ export class ImageBuilderComponent implements OnInit {
         {id: "vello_pubico9", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/09.png'},
         {id: "vello_pubico10", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/10.png'}
       ],
-      accesorios: [
+      accesorios: [ // ok
         {id: "accesorios1", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/01.png'},
         {id: "accesorios2", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/02.png'},
         {id: "accesorios3", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/03.png'},
@@ -148,23 +148,28 @@ export class ImageBuilderComponent implements OnInit {
         if (this.selectedImages[i].selectedId === null) {
           // Is the first time that its adding an image
           this.selectedImages[i].selectedId = image.id;
-          this.appendDiv(image.imageUrl, image.id);
+          this.appendDiv(image.imageUrl, image.id, this.selectedCategory);
         } else {
           this.deleteDiv(this.selectedImages[i].selectedId);
           this.selectedImages[i].selectedId = image.id;
-          this.appendDiv(image.imageUrl, image.id);
+          this.appendDiv(image.imageUrl, image.id, this.selectedCategory);
         }
         break;
       }
     }
   }
 
-  appendDiv(imageUrl: string, imageId: string) {
+  appendDiv(imageUrl: string, imageId: string, selectedCategory: string) {
     const img = document.createElement('img');
     img.src = imageUrl;
     img.id = imageId;
     img.style.position = 'fixed';
     img.style.height = '400px';
+    img.style.top = '100px';
+    img.style.pointerEvents = "none";
+    if (selectedCategory === "color_piel") {
+      img.style.zIndex = "-1";
+    }
     const canvas = document.querySelector("#canvas");
     canvas?.appendChild(img);
   }
