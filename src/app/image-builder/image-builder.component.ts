@@ -145,13 +145,17 @@ export class ImageBuilderComponent implements OnInit {
   selectImage(image: any) {
     for (var i=0; i<= this.selectedImages.length; i++) {
       if (this.selectedImages[i].category === this.selectedCategory) {
-        this.selectedImages[i].selectedId = image.id;
-        this.appendDiv(image.imageUrl, image.id)
+        if (this.selectedImages[i].selectedId === null) {
+          // Is the first time that its adding an image
+          this.selectedImages[i].selectedId = image.id;
+          this.appendDiv(image.imageUrl, image.id);
+        } else {
+          this.deleteDiv(this.selectedImages[i].selectedId);
+          this.selectedImages[i].selectedId = image.id;
+          this.appendDiv(image.imageUrl, image.id);
+        }
         break;
-      } else {
-        
       }
-
     }
   }
 
@@ -164,4 +168,12 @@ export class ImageBuilderComponent implements OnInit {
     const canvas = document.querySelector("#canvas");
     canvas?.appendChild(img);
   }
+
+  deleteDiv(imageId: string) {
+    const img = document.getElementById(imageId);
+    if (!!img) {
+      img.remove();
+    }
+  }
+
 }
