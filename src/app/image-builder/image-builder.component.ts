@@ -47,7 +47,9 @@ export class ImageBuilderComponent implements OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
-
+    this.loadImages('color_piel');
+    this.selectImage({id: "color_piel10", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/04.png'})
+    this.loadImages('vagina');
   }
 
   loadImages(category: keyof ImageMap) {
@@ -56,7 +58,8 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   selectImage(image: any) {
-    for (var i=0; i<= this.selectedImages.length; i++) {
+    console.log("image", image);
+    for (var i=0; i< this.selectedImages.length; i++) {
       if (this.selectedImages[i].category === this.selectedCategory) {
         if (this.selectedImages[i].selectedId === null) {
           // Is the first time that its adding an image
@@ -78,6 +81,7 @@ export class ImageBuilderComponent implements OnInit {
     img.id = imageId;
     img.style.position = 'absolute';
     img.style.height = '350px';
+    img.style.width = '100%';
     img.style.top = '100px';
     img.style.pointerEvents = "none";
     if (selectedCategory === "color_piel") {
