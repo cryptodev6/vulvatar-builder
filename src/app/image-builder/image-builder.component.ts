@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 interface ImageMap {
   [category: string]: {
@@ -16,7 +16,7 @@ interface ImageMap {
         misma, ¡y conviertete <br>
         <span class="red">tu vulva en arte!</span>
       </div>
-      <div id="canvas"></div>
+      <div id="canvas" #canvas></div>
       <div class="category-selector">
         <div class="category" (click)="loadImages('vagina')">Vagina</div>
         <div class="category" (click)="loadImages('labios')">Labios</div>
@@ -62,6 +62,8 @@ export class ImageBuilderComponent implements OnInit {
       "selectedId": null
     }
   ];
+
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
 
@@ -141,12 +143,15 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   selectImage(image: any) {
+    const img = new Image();
+    img.src = image.imageUrl;
+    img.className = 'image-canvas';
+    this.el.nativeElement.querySelector('#canvas').appendChild(img);
     for (var i=0; i<= this.selectedImages.length; i++) {
       if (this.selectedImages[i].category === this.selectedCategory) {
         this.selectedImages[i].selectedId = image.id;
         break;
       }
     }
-    console.log("this.selectedImages", this.selectedImages);
   }
 }
