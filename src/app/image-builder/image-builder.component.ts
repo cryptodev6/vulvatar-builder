@@ -101,17 +101,17 @@ export class ImageBuilderComponent implements OnInit {
         {id: "clitoris9", imageUrl: '../assets/VULVATAR_ELEMENTOS/CLITORIS/09.png'},
         {id: "clitoris10", imageUrl: '../assets/VULVATAR_ELEMENTOS/CLITORIS/10.png'}
       ],
-      vello_pubico: [
-        {id: "vello_pubico1", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/01.png'},
-        {id: "vello_pubico2", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/02.png'},
-        {id: "vello_pubico3", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/03.png'},
-        {id: "vello_pubico4", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/04.png'},
-        {id: "vello_pubico5", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/05.png'},
-        {id: "vello_pubico6", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/06.png'},
-        {id: "vello_pubico7", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/07.png'},
-        {id: "vello_pubico8", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/08.png'},
-        {id: "vello_pubico9", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/09.png'},
-        {id: "vello_pubico10", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/10.png'}
+      vello_pubico: [ // TODO. Preguntar diseño como sera el orden para mostrar porque son muchas imagenes
+        {id: "vello_pubico1", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-01.png'},
+        {id: "vello_pubico2", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-02.png'},
+        {id: "vello_pubico3", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-03.png'},
+        {id: "vello_pubico4", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-04.png'},
+        {id: "vello_pubico5", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-05.png'},
+        {id: "vello_pubico6", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-06.png'},
+        {id: "vello_pubico7", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-07.png'},
+        {id: "vello_pubico8", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-08.png'},
+        {id: "vello_pubico9", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-09.png'},
+        {id: "vello_pubico10", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-10.png'}
       ],
       accesorios: [ // ok
         {id: "accesorios1", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/01.png'},
@@ -138,6 +138,8 @@ export class ImageBuilderComponent implements OnInit {
         {id: "color_piel10", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/10.png'}
       ]
     };
+    // TODO no se que es COLOR_PIEL_PSI
+    // TODO no se que es EXTRAS_Fondos_Vulvatars
     this.selectedCategory = category;
     this.images = imageMap[category];
   }
@@ -163,7 +165,7 @@ export class ImageBuilderComponent implements OnInit {
     const img = document.createElement('img');
     img.src = imageUrl;
     img.id = imageId;
-    img.style.position = 'fixed';
+    img.style.position = 'absolute';
     img.style.height = '400px';
     img.style.top = '100px';
     img.style.pointerEvents = "none";
