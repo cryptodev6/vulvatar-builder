@@ -13,21 +13,14 @@
   background-color: rgb(251, 111, 166);
   color: #fff;
   text-align: center;
-  /* line-height: 90px; */
   font-size: 24px;
   text-align: left;
-  /* font-weight: bold; */
   padding-left: 10px;
   padding-top: 10px;
 }
 
 .red {
   color: rgb(237,0,0);
-}
-
-#canvas {
-  height: 400px;
-  background-color: rgb(255, 190, 0);
 }
 
 .category-selector {
@@ -64,8 +57,24 @@
   height: 80px;
 }
 
-.image-canvas {
-  width: 100%;
-  height: 400px;
+#canvas-container {
+  position: relative;
+  height: calc(100% - 90px - 50px - 16px - 16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#canvas {
+  height: 400px;
+  background-color: rgb(255, 190, 0);
+  width: 100%;
+}
+
+.image-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
