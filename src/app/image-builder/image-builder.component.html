@@ -15,7 +15,7 @@
       <div class="category" (click)="loadImages('color_piel')">Color de piel</div>
     </div>
     <div id="image-grid">
-      <img *ngFor="let image of images" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
+      <img *ngFor="let image of images" [id]="'image-' + image.id" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
     </div>
   </div>
 </div>

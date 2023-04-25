@@ -58,7 +58,6 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   selectImage(image: any) {
-    console.log("image", image);
     for (var i=0; i< this.selectedImages.length; i++) {
       if (this.selectedImages[i].category === this.selectedCategory) {
         if (this.selectedImages[i].selectedId === null) {
@@ -70,6 +69,7 @@ export class ImageBuilderComponent implements OnInit {
           this.selectedImages[i].selectedId = image.id;
           this.appendDiv(image.imageUrl, image.id, this.selectedCategory);
         }
+        console.log("this.selectedImages", this.selectedImages);
         break;
       }
     }
@@ -89,6 +89,22 @@ export class ImageBuilderComponent implements OnInit {
     }
     const canvas = document.querySelector("#canvas");
     canvas?.appendChild(img);
+    // this.refreshImageSelection(imageId, selectedCategory); 
+  }
+
+  refreshImageSelection(imageId: string, selectedCategory: string) {
+    // TODO: Create function
+    console.log("entered refreshImageSelection", this.images, imageId);
+    for (var i=0; i< this.images.length; i++) {
+      if (imageId === this.images[i].id) {
+        console.log("found image to change background", this.images[i]);
+        let searchString = "#image-" + imageId;
+        let canvas = document.querySelector(searchString) as HTMLCanvasElement;
+        if (!!canvas ) {
+          canvas.style.backgroundColor  = 'blue';
+        }
+      }
+    }
   }
 
   deleteDiv(imageId: string) {
