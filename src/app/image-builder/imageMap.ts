@@ -72,3 +72,8 @@ export const imageMap: ImageMap = {
     {id: "color_piel10", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/10.png'}
   ]
 };
+
+// TODO no se que es COLOR_PIEL_PSI
+// TODO no se que es EXTRAS_Fondos_Vulvatars
+// TODO cuales son los valores por defecto que cargan la primera vez
+// TODO me faltan las imagenes que van en el selector (vagina, labios, clitoris, etc..)

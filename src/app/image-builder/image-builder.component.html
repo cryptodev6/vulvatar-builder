@@ -1,17 +1,22 @@
-<div class="image-builder">
-  <div class="title">
-    Ten una cita contigo <br>
-    misma, ¡y conviertete <br>
-    <span class="red">tu vulva en arte!</span>
+<div class="main-container">
+  <div class="image-builder">
+    <div class="title">
+      Ten una cita contigo <br>
+      misma, ¡y conviertete <br>
+      <span class="red">tu vulva en arte!</span>
+    </div>
+    <div id="canvas" #canvas></div>
+    <div class="category-selector">
+      <div class="category" (click)="loadImages('vagina')">Vagina</div>
+      <div class="category" (click)="loadImages('labios')">Labios</div>
+      <div class="category" (click)="loadImages('clitoris')">Clitoris</div>
+      <div class="category" (click)="loadImages('vello_pubico')">Vello Pubico</div>
+      <div class="category" (click)="loadImages('accesorios')">Accesorios</div>
+      <div class="category" (click)="loadImages('color_piel')">Color de piel</div>
+    </div>
+    <div id="image-grid">
+      <img *ngFor="let image of images" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
+    </div>
   </div>
-  <div id="canvas"></div>
-  <div class="category-selector">
-    <div class="category">Vagina</div>
-    <div class="category">Labios</div>
-    <div class="category">Clitoris</div>
-    <div class="category">Vello Pubico</div>
-    <div class="category">Accesorios</div>
-    <div class="category">Color de piel</div>
-  </div>
-  <div id="image-grid"></div>
 </div>
+  

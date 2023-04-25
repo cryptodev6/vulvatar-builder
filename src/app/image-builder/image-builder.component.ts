@@ -10,27 +10,7 @@ interface ImageMap {
 
 @Component({
   selector: 'app-image-builder',
-  template: `
-    <div class="image-builder">
-      <div class="title">
-        Ten una cita contigo <br>
-        misma, ¡y conviertete <br>
-        <span class="red">tu vulva en arte!</span>
-      </div>
-      <div id="canvas" #canvas></div>
-      <div class="category-selector">
-        <div class="category" (click)="loadImages('vagina')">Vagina</div>
-        <div class="category" (click)="loadImages('labios')">Labios</div>
-        <div class="category" (click)="loadImages('clitoris')">Clitoris</div>
-        <div class="category" (click)="loadImages('vello_pubico')">Vello Pubico</div>
-        <div class="category" (click)="loadImages('accesorios')">Accesorios</div>
-        <div class="category" (click)="loadImages('color_piel')">Color de piel</div>
-      </div>
-      <div id="image-grid">
-        <img *ngFor="let image of images" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
-      </div>
-    </div>
-  `,
+  templateUrl: './image-builder.component.html',
   styleUrls: ['./image-builder.component.scss']
 })
 export class ImageBuilderComponent implements OnInit {
@@ -71,11 +51,6 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   loadImages(category: keyof ImageMap) {
-    console.log("category", category);
-    
-    // TODO no se que es COLOR_PIEL_PSI
-    // TODO no se que es EXTRAS_Fondos_Vulvatars
-    // TODO cuales son los valores por defecto que cargan la primera vez
     this.selectedCategory = category;
     this.images = imageMap[category];
   }
