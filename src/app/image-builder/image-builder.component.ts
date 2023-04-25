@@ -28,7 +28,7 @@ type ImageMap = {
         <div class="category" (click)="loadImages('color_piel')">Color de piel</div>
       </div>
       <div id="image-grid">
-        <img *ngFor="let image of images" [src]="image">
+        <img *ngFor="let image of images" [src]="image" class="image-selector">
       </div>
     </div>
   `,
