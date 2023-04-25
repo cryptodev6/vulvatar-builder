@@ -73,9 +73,9 @@ export class ImageBuilderComponent implements OnInit {
     console.log("category", category);
     const imageMap: ImageMap = {
       vagina: [ // cuales son las imagenes?
-        {id: "vagina1", imageUrl: 'vagina-image-1.jpg'},
-        {id: "vagina2", imageUrl: 'vagina-image-2.jpg'},
-        {id: "vagina3", imageUrl: 'vagina-image-3.jpg'}
+        {id: "vagina1", imageUrl: '../assets/VULVATAR_ELEMENTOS/BASES/01.png'},
+        {id: "vagina2", imageUrl: '../assets/VULVATAR_ELEMENTOS/BASES/01.png'},
+        {id: "vagina3", imageUrl: '../assets/VULVATAR_ELEMENTOS/BASES/01.png'}
       ],
       labios: [ // ok
         {id: "labios1", imageUrl: '../assets/VULVATAR_ELEMENTOS/LABIOS/01.png'},
@@ -125,7 +125,7 @@ export class ImageBuilderComponent implements OnInit {
         {id: "accesorios9", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/09.png'},
         {id: "accesorios10", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/10.png'}
       ],
-      color_piel: [
+      color_piel: [ // ok
         {id: "color_piel1", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/01.png'},
         {id: "color_piel2", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/02.png'},
         {id: "color_piel3", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/03.png'},
