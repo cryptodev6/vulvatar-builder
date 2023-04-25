@@ -77,7 +77,7 @@ export class ImageBuilderComponent implements OnInit {
     img.src = imageUrl;
     img.id = imageId;
     img.style.position = 'absolute';
-    img.style.height = '400px';
+    img.style.height = '350px';
     img.style.top = '100px';
     img.style.pointerEvents = "none";
     if (selectedCategory === "color_piel") {
