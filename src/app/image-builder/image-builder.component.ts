@@ -165,4 +165,9 @@ export class ImageBuilderComponent implements OnInit {
     }
   }
 
+  saveImage() {
+    console.log("selectedImages", this.selectedImages);
+    // redirect here
+  }
+
 }
