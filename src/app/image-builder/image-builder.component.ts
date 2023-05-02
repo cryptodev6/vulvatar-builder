@@ -141,6 +141,22 @@ export class ImageBuilderComponent implements OnInit {
     }
   }
 
+  returnImage() {
+    // Get the last selected image and remove it from the selectedImages array
+    const lastSelectedImage = this.selectedImages.pop();
+
+    // Remove the last added image div from the canvas
+    const canvas = document.getElementById('canvas');
+    const lastImageDiv = canvas?.lastChild as Node;
+    canvas?.removeChild(lastImageDiv);
+
+    // Set the selectedImages array to its previous state if an image was removed
+    if (lastSelectedImage) {
+      this.selectedImages = [...this.selectedImages];
+    }
+  }
+
+
 
   deleteDiv(imageId: string) {
     const img = document.getElementById(imageId);

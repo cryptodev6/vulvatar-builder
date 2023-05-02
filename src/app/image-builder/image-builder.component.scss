@@ -104,3 +104,21 @@
   background-color: rgb(237,0,0);
   color: #fff;
 }
+#return-button {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  color: rgb(237,0,0);
+  border: 2px solid rgb(237,0,0);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#return-button:hover {
+  background-color: rgb(237,0,0);
+  color: #fff;
+}
