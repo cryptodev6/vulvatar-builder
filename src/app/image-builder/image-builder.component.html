@@ -11,12 +11,12 @@
       <button id="save-button" (click)="saveImage()" class="return-button">Siguiente</button>
     </div>
     <div class="category-selector">
-      <div class="category" (click)="loadImages('vagina')">Vagina</div>
-      <div class="category" (click)="loadImages('labios')">Labios</div>
-      <div class="category" (click)="loadImages('clitoris')">Clitoris</div>
-      <div class="category" (click)="loadImages('vello_pubico')">Vello Pubico</div>
-      <div class="category" (click)="loadImages('accesorios')">Accesorios</div>
-      <div class="category" (click)="loadImages('color_piel')">Color de piel</div>
+      <div class="category" (click)="loadImages('vagina')" [ngClass]="{'selected': selectedCategory === 'vagina'}">Vagina</div>
+      <div class="category" (click)="loadImages('labios')" [ngClass]="{'selected': selectedCategory === 'labios'}">Labios</div>
+      <div class="category" (click)="loadImages('clitoris')" [ngClass]="{'selected': selectedCategory === 'clitoris'}">Clitoris</div>
+      <div class="category" (click)="loadImages('vello_pubico')" [ngClass]="{'selected': selectedCategory === 'vello_pubico'}">Vello Pubico</div>
+      <div class="category" (click)="loadImages('accesorios')" [ngClass]="{'selected': selectedCategory === 'accesorios'}">Accesorios</div>
+      <div class="category" (click)="loadImages('color_piel')" [ngClass]="{'selected': selectedCategory === 'color_piel'}">Color de piel</div>
     </div>
     <div id="image-grid">
       <img *ngFor="let image of images" [id]="'image-' + image.id" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
