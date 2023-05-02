@@ -6,7 +6,7 @@ interface ImageMap {
 }
 
 export const imageMap: ImageMap = {
-  vagina: [ // cuales son las imagenes?
+  vagina: [
     {id: "vagina1", imageUrl: '../assets/VULVATAR_ELEMENTOS/BASES/01.png'},
     {id: "vagina2", imageUrl: '../assets/VULVATAR_ELEMENTOS/BASES/02.png'},
     {id: "vagina3", imageUrl: '../assets/VULVATAR_ELEMENTOS/BASES/03.png'}
@@ -36,11 +36,14 @@ export const imageMap: ImageMap = {
     {id: "clitoris10", imageUrl: '../assets/VULVATAR_ELEMENTOS/CLITORIS/10.png'}
   ],
   vello_pubico: [ // TODO. Preguntar diseño como sera el orden para mostrar porque son muchas imagenes
+    /*
+      Poner subcategorias de colores. Pendiente diseño enviar como seria el menu
+    */
     {id: "vello_pubico1", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-01.png'},
     {id: "vello_pubico2", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-02.png'},
     {id: "vello_pubico3", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-03.png'},
     {id: "vello_pubico4", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-04.png'},
-    {id: "vello_pubico5", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-05.png'},
+    // {id: "vello_pubico5", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-05.png'},
     {id: "vello_pubico6", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-06.png'},
     {id: "vello_pubico7", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-07.png'},
     {id: "vello_pubico8", imageUrl: '../assets/VULVATAR_ELEMENTOS/VELLO_PUBICO/1/vellos color_1-08.png'},
@@ -60,6 +63,7 @@ export const imageMap: ImageMap = {
     {id: "accesorios10", imageUrl: '../assets/VULVATAR_ELEMENTOS/ACCESORIOS/10.png'}
   ],
   color_piel: [ // ok
+    // TODO agregar color PSI tambien
     {id: "color_piel1", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/01.png'},
     {id: "color_piel2", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/02.png'},
     {id: "color_piel3", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/03.png'},
@@ -73,7 +77,11 @@ export const imageMap: ImageMap = {
   ]
 };
 
-// TODO no se que es COLOR_PIEL_PSI
-// TODO no se que es EXTRAS_Fondos_Vulvatars
-// TODO cuales son los valores por defecto que cargan la primera vez
-// TODO me faltan las imagenes que van en el selector (vagina, labios, clitoris, etc..)
+// TODO no se que es COLOR_PIEL_PSI --- 
+// TODO no se que es EXTRAS_Fondos_Vulvatars --- Agregar nueva categoria y poner eso
+// TODO cuales son los valores por defecto que cargan la primera vez --- pendiente por diseño
+// TODO me faltan las imagenes que van en el selector (vagina, labios, clitoris, etc..) -- pendeinte por diseño
+// TODO en el image grid hay algun hover con la seleccion para que el usuario sepa que ha seleccionado? -- color exacto por diseño
+
+//TODO interno: falta el selector de menu
+// TODO faltan los componentes de tacho, regresar y siguiente

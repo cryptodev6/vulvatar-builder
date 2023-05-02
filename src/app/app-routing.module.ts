@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ImageBuilderComponent } from './image-builder/image-builder.component'; // Import your new component
 
 const routes: Routes = [
-  { path: 'image-builder', component: ImageBuilderComponent }
+  { path: 'image-builder', component: ImageBuilderComponent },
+  { path: '', component: ImageBuilderComponent }
 ];
 
 @NgModule({

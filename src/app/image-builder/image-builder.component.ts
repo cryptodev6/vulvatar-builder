@@ -107,6 +107,41 @@ export class ImageBuilderComponent implements OnInit {
     }
   }
 
+  reset() {
+    this.selectedImages = [
+      {
+        "category": "vagina",
+        "selectedId": null
+      },
+      {
+        "category": "labios",
+        "selectedId": null
+      },
+      {
+        "category": "clitoris",
+        "selectedId": null
+      },
+      {
+        "category": "vello_pubico",
+        "selectedId": null
+      },
+      {
+        "category": "accesorios",
+        "selectedId": null
+      },
+      {
+        "category": "color_piel",
+        "selectedId": null
+      }
+    ];
+
+    const canvas = this.el.nativeElement.querySelector('#canvas');
+    while (canvas.firstChild) {
+      canvas.removeChild(canvas.firstChild);
+    }
+  }
+
+
   deleteDiv(imageId: string) {
     const img = document.getElementById(imageId);
     if (!!img) {
