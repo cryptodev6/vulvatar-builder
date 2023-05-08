@@ -110,10 +110,6 @@
   border: 0px;
 }
 
-#reset-button:hover {
-  background-color: rgb(237,0,0);
-  color: #fff;
-}
 #return-button {
   position: absolute;
   top: 60px;
@@ -123,14 +119,9 @@
   border: 0px;
 }
 
-#return-button:hover {
-  background-color: rgb(237,0,0);
-  color: #fff;
-}
-
 #save-button {
   position: absolute;
-  bottom: 230px;
+  top: 310px;
   right: 20px;
   cursor: pointer;
   background-color: transparent;

@@ -82,7 +82,7 @@ export class ImageBuilderComponent implements OnInit {
     img.style.position = 'absolute';
     img.style.height = '350px';
     img.style.width = '100%';
-    img.style.top = '100px';
+    img.style.top = '0px';
     img.style.pointerEvents = "none";
     if (selectedCategory === "color_piel") {
       img.style.zIndex = "-1";
