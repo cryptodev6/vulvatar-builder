@@ -6,9 +6,15 @@
       <span class="red">tu vulva en arte!</span>
     </div>
     <div id="canvas" #canvas>
-      <button id="reset-button" (click)="reset()">Reset</button>
-      <button id="return-button" (click)="returnImage()" class="return-button">Return</button>
-      <button id="save-button" (click)="saveImage()" class="return-button">Siguiente</button>
+      <button id="reset-button" (click)="reset()">
+        <img class="icono" src="assets/iconos_builder/iconos/bote_basura.png">
+      </button>
+      <button id="return-button" (click)="returnImage()" class="return-button">
+        <img class="icono" src="assets/iconos_builder/iconos/rehacer.png">
+      </button>
+      <button id="save-button" (click)="saveImage()" class="return-button">
+        Siguiente
+      </button>
     </div>
     <div class="category-selector">
       <div class="category" (click)="loadImages('vagina')">
