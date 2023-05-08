@@ -11,12 +11,42 @@
       <button id="save-button" (click)="saveImage()" class="return-button">Siguiente</button>
     </div>
     <div class="category-selector">
-      <div class="category" (click)="loadImages('vagina')" [ngClass]="{'selected': selectedCategory === 'vagina'}">Vagina</div>
-      <div class="category" (click)="loadImages('labios')" [ngClass]="{'selected': selectedCategory === 'labios'}">Labios</div>
-      <div class="category" (click)="loadImages('clitoris')" [ngClass]="{'selected': selectedCategory === 'clitoris'}">Clitoris</div>
-      <div class="category" (click)="loadImages('vello_pubico')" [ngClass]="{'selected': selectedCategory === 'vello_pubico'}">Vello Pubico</div>
-      <div class="category" (click)="loadImages('accesorios')" [ngClass]="{'selected': selectedCategory === 'accesorios'}">Accesorios</div>
-      <div class="category" (click)="loadImages('color_piel')" [ngClass]="{'selected': selectedCategory === 'color_piel'}">Color de piel</div>
+      <div class="category" (click)="loadImages('vagina')">
+        <img class="icono" src="assets/iconos_builder/vagina.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'vagina'}">
+          Vagina
+        </div>
+      </div>
+      <div class="category" (click)="loadImages('labios')">
+        <img class="icono" src="assets/iconos_builder/labios.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'labios'}">
+          Labios
+        </div>
+      </div>
+      <div class="category" (click)="loadImages('clitoris')">
+        <img class="icono" src="assets/iconos_builder/clitoris.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'clitoris'}">
+          Clitoris
+        </div>
+      </div>
+      <div class="category" (click)="loadImages('vello_pubico')">
+        <img class="icono" src="assets/iconos_builder/vello.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'vello_pubico'}">
+          Vello púbico
+        </div>
+      </div>
+      <div class="category" (click)="loadImages('accesorios')">
+        <img class="icono" src="assets/iconos_builder/accesorios.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'accesorios'}">
+          Accesorios
+        </div>
+      </div>
+      <div class="category" (click)="loadImages('color_piel')">
+        <img class="icono" src="assets/iconos_builder/tonos de piel.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'color_piel'}">
+          Color de piel
+        </div>
+      </div>
     </div>
     <div id="image-grid">
       <img *ngFor="let image of images" [id]="'image-' + image.id" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">

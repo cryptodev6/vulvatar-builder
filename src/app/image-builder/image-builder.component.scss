@@ -8,6 +8,16 @@
   height: 100%;
 }
 
+.icono {
+  width: 30px;
+
+}
+
+.category-text {
+  font-size: 10px;
+}
+
+
 .title {
   position: relative;
   top: 0;
@@ -48,11 +58,16 @@
   justify-content: center;
   height: 100%;
   padding: 0 16px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   background-color: rgb(237,0,0);
   color: #fff;
+  flex-direction: column;
+}
+
+.selected {
+  background-color: rgba(0, 0, 153, 0.7);
 }
 
 #image-grid {
@@ -140,9 +155,4 @@
 #save-button:hover {
   background-color: rgb(237,0,0);
   color: #fff;
-}
-
-.selected {
-  background-color: #fff;
-  color: rgb(237,0,0);
 }
