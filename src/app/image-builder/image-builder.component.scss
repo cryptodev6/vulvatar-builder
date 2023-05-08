@@ -134,7 +134,11 @@
   right: 20px;
   cursor: pointer;
   background-color: transparent;
-  border: 0px;
+  border: 1px solid #fff;
+  background-color: #9933ff;
+  border-radius: 5px;
+  color: #fFF;
+  padding: 6px;
 }
 
 #save-button:hover {
