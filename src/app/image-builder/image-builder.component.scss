@@ -105,14 +105,9 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #fff;
-  color: rgb(237,0,0);
-  border: 2px solid rgb(237,0,0);
-  border-radius: 4px;
-  padding: 8px 16px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: transparent;
+  border: 0px;
 }
 
 #reset-button:hover {
@@ -123,14 +118,9 @@
   position: absolute;
   top: 60px;
   right: 20px;
-  background-color: #fff;
-  color: rgb(237,0,0);
-  border: 2px solid rgb(237,0,0);
-  border-radius: 4px;
-  padding: 8px 16px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: transparent;
+  border: 0px;
 }
 
 #return-button:hover {
@@ -142,14 +132,9 @@
   position: absolute;
   bottom: 230px;
   right: 20px;
-  background-color: #fff;
-  color: rgb(237,0,0);
-  border: 2px solid rgb(237,0,0);
-  border-radius: 4px;
-  padding: 8px 16px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: transparent;
+  border: 0px;
 }
 
 #save-button:hover {
