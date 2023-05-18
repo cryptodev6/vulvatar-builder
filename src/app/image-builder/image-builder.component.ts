@@ -17,6 +17,7 @@ export class ImageBuilderComponent implements OnInit {
   images: any[] = [];
   userSelection: any = [];
   selectedCategory: any = '';
+  previousSelections: { [category: string]: string | null } = {};
   selectedImages: any[] = [
     {
       "category": "vagina",
@@ -44,6 +45,7 @@ export class ImageBuilderComponent implements OnInit {
     }
   ];
 
+
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
@@ -58,19 +60,56 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   selectImage(image: any) {
-    for (var i=0; i< this.selectedImages.length; i++) {
-      if (this.selectedImages[i].category === this.selectedCategory) {
-        if (this.selectedImages[i].selectedId === null) {
-          // Is the first time that its adding an image
-          this.selectedImages[i].selectedId = image.id;
-          this.appendDiv(image.imageUrl, image.id, this.selectedCategory);
-        } else {
-          this.deleteDiv(this.selectedImages[i].selectedId);
-          this.selectedImages[i].selectedId = image.id;
-          this.appendDiv(image.imageUrl, image.id, this.selectedCategory);
-        }
-        console.log("this.selectedImages", this.selectedImages);
-        break;
+    const category = this.selectedCategory;
+
+    if (this.selectedImages.some(item => item.category === category)) {
+      const previousSelection = this.previousSelections[category];
+
+      if (previousSelection === image.id) {
+        // User clicked on the same image, return to the previous selection
+        this.returnToPreviousSelection(category);
+        return;
+      }
+
+      const selectedId = this.selectedImages.find(item => item.category === category)?.selectedId;
+
+      if (selectedId !== null) {
+        // Remove the last selected image div
+        this.deleteDiv(selectedId);
+      }
+    }
+
+    const categoryIndex = this.selectedImages.findIndex(item => item.category === category);
+
+    if (categoryIndex !== -1) {
+      // Update selectedId and add the new image div
+      this.selectedImages[categoryIndex].selectedId = image.id;
+      this.appendDiv(image.imageUrl, image.id, category);
+
+      // Update previous selection
+      this.previousSelections[category] = image.id;
+    }
+
+    console.log("this.selectedImages", this.selectedImages);
+  }
+
+  returnToPreviousSelection(category: string) {
+    const previousSelection = this.previousSelections[category];
+    console.log("previousSelection",previousSelection);
+    const currentSelection = this.selectedImages.find(item => item.category === category);
+    console.log("currentSelection", currentSelection);
+    if (currentSelection && previousSelection !== null && previousSelection !== currentSelection.selectedId) {
+      // Get the image to be added back
+      const imageToAdd = this.images.find(item => item.id === previousSelection);
+
+      if (imageToAdd) {
+        // Remove the current selected image div
+        this.deleteDiv(currentSelection.selectedId);
+
+        // Add back the previous selected image div
+        this.appendDiv(imageToAdd.imageUrl, imageToAdd.id, category);
+        currentSelection.selectedId = imageToAdd.id;
+        this.previousSelections[category] = imageToAdd.id;
       }
     }
   }
@@ -142,21 +181,13 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   returnImage() {
-    // Get the last selected image and remove it from the selectedImages array
-    const lastSelectedImage = this.selectedImages.pop();
+    const category = this.selectedCategory;
+    this.returnToPreviousSelection(category);
 
-    // Remove the last added image div from the canvas
     const canvas = document.getElementById('canvas');
     const lastImageDiv = canvas?.lastChild as Node;
     canvas?.removeChild(lastImageDiv);
-
-    // Set the selectedImages array to its previous state if an image was removed
-    if (lastSelectedImage) {
-      this.selectedImages = [...this.selectedImages];
-    }
   }
-
-
 
   deleteDiv(imageId: string) {
     const img = document.getElementById(imageId);
