@@ -166,8 +166,20 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   saveImage() {
-    console.log("selectedImages", this.selectedImages);
-    // redirect here
+    const requiredCategories = ['vagina', 'labios', 'clitoris'];
+
+    // Check if all required categories are selected
+    const missingCategories = requiredCategories.filter(category => {
+      return !this.selectedImages.find(image => image.category === category && image.selectedId !== null);
+    });
+
+    if (missingCategories.length === 0) {
+      console.log("selectedImages", this.selectedImages);
+      // Perform the desired action or redirect here
+    } else {
+      alert("Para guardar el vulvatar tienes que seleccionar obligatoriamente vagina, clitoris y labios");
+      // Display error message or perform any other error handling
+    }
   }
 
 }
