@@ -50,7 +50,7 @@ export class ImageBuilderComponent implements OnInit {
 
   ngOnInit() {
     this.loadImages('color_piel');
-    this.selectImage({id: "color_piel10", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/04.png'})
+    this.selectImage({id: "color_piel15", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/05.png'});
     this.loadImages('vagina');
   }
 
@@ -170,14 +170,14 @@ export class ImageBuilderComponent implements OnInit {
       },
       {
         "category": "color_piel",
-        "selectedId": null
+        "selectedId": "color_piel15"
       }
     ];
-
     const canvas = this.el.nativeElement.querySelector('#canvas');
     while (canvas.firstChild) {
       canvas.removeChild(canvas.firstChild);
     }
+    this.selectImage({id: "color_piel15", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/05.png'});
   }
 
   returnImage() {
