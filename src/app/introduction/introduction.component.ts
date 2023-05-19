@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-introduction',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./introduction.component.scss']
 })
 export class IntroductionComponent implements OnInit {
-
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
+  }
+
+  redirectToAnotherRoute() {
+    this.router.navigate(['/image-builder']);
   }
 
 }

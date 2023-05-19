@@ -1,0 +1,42 @@
+/* component.css */
+.container {
+  background-color: #8533ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.content {
+  text-align: center;
+}
+
+h1, h2, .button {
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.button {
+  background-color: #ff33cc;
+  width: 84px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.button-container {
+  /*margin-left: 50%;
+  transform: tran;*/
+}
