@@ -74,14 +74,14 @@ export const imageMap: ImageMap = {
     {id: "color_piel8", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/08.png'},
     {id: "color_piel9", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/09.png'},
     {id: "color_piel10", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL/10.png'},
-    {id: "color_piel1", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/01.png'},
-    {id: "color_piel2", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/02.png'},
-    {id: "color_piel3", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/03.png'},
-    {id: "color_piel4", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/04.png'},
-    {id: "color_piel5", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/05.png'},
-    {id: "color_piel6", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/06.png'},
-    {id: "color_piel7", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/07.png'},
-    {id: "color_piel8", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/08.png'}
+    {id: "color_piel11", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/01.png'},
+    {id: "color_piel12", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/02.png'},
+    {id: "color_piel13", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/03.png'},
+    {id: "color_piel14", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/04.png'},
+    {id: "color_piel15", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/05.png'},
+    {id: "color_piel16", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/06.png'},
+    {id: "color_piel17", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/07.png'},
+    {id: "color_piel18", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/08.png'}
   ]
 };
 
