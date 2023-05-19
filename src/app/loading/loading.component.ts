@@ -10,9 +10,9 @@ export class LoadingComponent implements OnInit {
   redirectTo: string = '/introduction';
 
   constructor(private router: Router) {
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.router.navigateByUrl(this.redirectTo);
-    }, 1000);
+    }, 1000);*/
   }
 
   ngOnInit(): void {
