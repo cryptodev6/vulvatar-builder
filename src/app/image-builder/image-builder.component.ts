@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { imageMap } from './imageMap';
+import html2canvas from 'html2canvas';
 
 interface ImageMap {
   [category: string]: {
@@ -16,6 +17,7 @@ interface ImageMap {
 export class ImageBuilderComponent implements OnInit {
   images: any[] = [];
   userSelection: any = [];
+  @ViewChild('canvasContainer', { static: true }) canvasContainer: ElementRef<HTMLDivElement>;
   selectedCategory: any = '';
   previousSelections: { [category: string]: string | null } = {};
   selectedImages: any[] = [
@@ -46,12 +48,16 @@ export class ImageBuilderComponent implements OnInit {
   ];
 
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
     this.loadImages('color_piel');
     this.selectImage({id: "color_piel15", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/05.png'});
     this.loadImages('vagina');
+  }
+
+  ngAfterViewInit(): void {
+    const containerElement = this.canvasContainer.nativeElement;
   }
 
   loadImages(category: keyof ImageMap) {
@@ -203,14 +209,28 @@ export class ImageBuilderComponent implements OnInit {
     const missingCategories = requiredCategories.filter(category => {
       return !this.selectedImages.find(image => image.category === category && image.selectedId !== null);
     });
+    this.transformDivToCanvas("canvas");
 
-    if (missingCategories.length === 0) {
+    /*if (missingCategories.length === 0) {
       console.log("selectedImages", this.selectedImages);
       // Perform the desired action or redirect here
     } else {
       alert("Para guardar el vulvatar tienes que seleccionar obligatoriamente vagina, clitoris y labios");
       // Display error message or perform any other error handling
-    }
+    }*/
+  }
+
+  transformDivToCanvas(divId: string) {
+    const element: any = document.getElementById(divId);
+
+    html2canvas(element).then((canvas) => {
+      const convertedCanvas = canvas as HTMLCanvasElement;
+      this.renderer.appendChild(this.canvasContainer.nativeElement, convertedCanvas);
+  
+      console.log("convertedCanvas", convertedCanvas);
+      // Now you can use the convertedCanvas element as a canvas
+      // Add your logic here (e.g., append to the DOM or perform further processing)
+    });
   }
 
 }
