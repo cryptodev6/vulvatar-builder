@@ -39,6 +39,11 @@
   width: 100%;
 }
 
+#canvasContainer {
+  height: 350px;
+  width: 100%;
+  display: none
+}
 
 .red {
   color: rgb(237,0,0);

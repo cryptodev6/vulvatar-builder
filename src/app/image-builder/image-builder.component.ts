@@ -95,8 +95,6 @@ export class ImageBuilderComponent implements OnInit {
       // Update previous selection
       this.previousSelections[category] = image.id;
     }
-
-    console.log("this.selectedImages", this.selectedImages);
   }
 
   returnToPreviousSelection(category: string) {
@@ -225,11 +223,21 @@ export class ImageBuilderComponent implements OnInit {
 
     html2canvas(element).then((canvas) => {
       const convertedCanvas = canvas as HTMLCanvasElement;
-      this.renderer.appendChild(this.canvasContainer.nativeElement, convertedCanvas);
-  
-      console.log("convertedCanvas", convertedCanvas);
-      // Now you can use the convertedCanvas element as a canvas
-      // Add your logic here (e.g., append to the DOM or perform further processing)
+      document.getElementById("canvas").style.display = "none";
+      const dataURL = convertedCanvas.toDataURL();
+      const image = new Image();
+      image.src = dataURL;
+      image.style.height="350px";
+      image.style.position="absolute";
+      image.style.width="100%";
+      image.style.top="0px";
+      image.style.pointerEvents="0px";
+      image.style.zIndex ="-1";
+      document.getElementById("canvasContainer").appendChild(image);
+      document.getElementById("canvasContainer").style.display = "block";
+
+      // this.renderer.appendChild(this.canvasContainer.nativeElement, convertedCanvas);
+      // document.getElementById("canvasContainer").style.display = "block";
     });
   }
 
