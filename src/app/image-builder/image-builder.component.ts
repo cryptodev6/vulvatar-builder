@@ -279,15 +279,25 @@ export class ImageBuilderComponent implements OnInit {
       document.getElementById("canvasContainer").appendChild(image);
       document.getElementById("canvasContainer").style.display = "block";
       image.onload = () => {
-        console.log("dataURL", dataURL);
         this.imageBase64 = dataURL;
         this.croppedImage = dataURL;
         document.getElementById("image-cropper").style.display = "block";
         document.getElementById("image-cropper").style.padding = "0px";
         document.getElementById("canvasContainer").style.display = "none";
+        document.getElementById("category-selector").style.display = "none";
+        document.getElementById("image-grid").style.display = "none";
+        document.getElementById("vulvatar-confirmation").style.display = "block";
         this.cropFinished = true;
       };
     });
+  }
+
+  shareImage() {
+
+  }
+
+  downloadImage() {
+
   }
 
 }

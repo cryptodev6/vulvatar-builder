@@ -147,7 +147,56 @@
   padding: 6px;
 }
 
-#save-button:hover {
-  background-color: rgb(237,0,0);
-  color: #fff;
+.button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  background-color: #9933ff;
+  border-radius: 5px;
+  color: #fFF;
+  padding: 6px;
+}
+
+.finish-text {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#save-button-confirmation {
+  background-color: #6c58ce;
+  border-radius: 5px;
+  color: #fFF;
+  box-shadow: none;
+  padding: 6px;
+  font-size: 15px;
+}
+
+#download-button-confirmation {
+  background-color: #fdaecd;
+  border-radius: 5px;
+  color: #fFF;
+  box-shadow: none;
+  padding: 6px;
+  font-size: 15px;
+  border: none;
+}
+
+#vulvatar-confirmation {
+  display: none;
+  height: 48vh;
+  background-color: #ff0000;
+}
+
+.vulvatar-confirmation-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vulvatar-confirmation-button-container button {
+  margin: 0 5px; /* Adjust the margin value as needed */
 }

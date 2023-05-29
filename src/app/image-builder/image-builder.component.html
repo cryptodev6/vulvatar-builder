@@ -12,9 +12,6 @@
         (loadImageFailed)="loadImageFailed()"
         id="image-cropper"
     ></image-cropper>
-    <button *ngIf="cropFinished" (click)="onCropConfirm()">Confirm</button>
-
-    <!--img id="image-cropper-result" [src]="croppedImage" /-->
     <div id="canvas" #canvas>
       <button id="reset-button" (click)="reset()">
         <img class="icono" src="assets/iconos_builder/iconos/bote_basura.png">
@@ -22,13 +19,13 @@
       <button id="return-button" (click)="returnImage()">
         <img class="icono" src="assets/iconos_builder/iconos/rehacer.png">
       </button>
-      <button id="save-button" (click)="saveImage()">
+      <button id="save-button" class="button" (click)="saveImage()">
         Siguiente
       </button>
     </div>
     <div id="canvasContainer" #canvasContainer>
     </div>
-    <div class="category-selector">
+    <div class="category-selector" id="category-selector">
       <div class="category" (click)="loadImages('vagina')">
         <img class="icono" src="assets/iconos_builder/vagina.png">
         <div class="category-text" [ngClass]="{'selected': selectedCategory === 'vagina'}">
@@ -68,6 +65,17 @@
     </div>
     <div id="image-grid">
       <img *ngFor="let image of images" [id]="'image-' + image.id" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
+    </div>
+    <div id="vulvatar-confirmation">
+      <p class="finish-text">¿Que deseas hacer con tu Vulvávatar?</p>
+      <div class="vulvatar-confirmation-button-container">
+        <button id="save-button-confirmation" class="button" (click)="shareImage()">
+          Compartir
+        </button>
+        <button id="download-button-confirmation" class="button" (click)="downloadImage()">
+          Descargar
+        </button>
+      </div>
     </div>
   </div>
 </div>
