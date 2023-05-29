@@ -78,7 +78,6 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   processCroppedImage() {
-    console.log("cropped imag result", this.croppedImage);
     const base64ImageUrl = this.croppedImage;
     const byteCharacters = atob(base64ImageUrl.split(',')[1]);
     const byteArrays = [];
@@ -89,7 +88,6 @@ export class ImageBuilderComponent implements OnInit {
     const blob = new Blob([byteArray], { type: 'image/png' });
     saveAs(blob, 'vulvatar.png');
   }
-
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 
@@ -262,6 +260,9 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   transformDivToCanvas(divId: string) {
+    document.getElementById("reset-button").style.display = "none";
+    document.getElementById("return-button").style.display = "none";
+    document.getElementById("save-button").style.display = "none";
     const element: any = document.getElementById(divId);
     html2canvas(element).then((canvas) => {
       const convertedCanvas = canvas as HTMLCanvasElement;
