@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
+import { saveAs } from 'file-saver';
 import { imageMap } from './imageMap';
 import html2canvas from 'html2canvas';
 
@@ -77,9 +78,16 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   processCroppedImage() {
-    // This is a placeholder function, replace it with your actual logic
-    console.log('Cropped image processed.');
-    // Perform any further actions or function calls here
+    console.log("cropped imag result", this.croppedImage);
+    const base64ImageUrl = this.croppedImage;
+    const byteCharacters = atob(base64ImageUrl.split(',')[1]);
+    const byteArrays = [];
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteArrays.push(byteCharacters.charCodeAt(i));
+    }
+    const byteArray = new Uint8Array(byteArrays);
+    const blob = new Blob([byteArray], { type: 'image/png' });
+    saveAs(blob, 'vulvatar.png');
   }
 
 
@@ -255,13 +263,11 @@ export class ImageBuilderComponent implements OnInit {
 
   transformDivToCanvas(divId: string) {
     const element: any = document.getElementById(divId);
-
     html2canvas(element).then((canvas) => {
       const convertedCanvas = canvas as HTMLCanvasElement;
       document.getElementById("canvas").style.display = "none";
       const dataURL = convertedCanvas.toDataURL();
       const image = new Image();
-
       image.src = dataURL;
       image.style.height="350px";
       image.style.position="absolute";
@@ -271,8 +277,6 @@ export class ImageBuilderComponent implements OnInit {
       image.style.zIndex ="-1";
       document.getElementById("canvasContainer").appendChild(image);
       document.getElementById("canvasContainer").style.display = "block";
-
-
       image.onload = () => {
         console.log("dataURL", dataURL);
         this.imageBase64 = dataURL;
@@ -280,14 +284,8 @@ export class ImageBuilderComponent implements OnInit {
         document.getElementById("image-cropper").style.display = "block";
         document.getElementById("image-cropper").style.padding = "0px";
         document.getElementById("canvasContainer").style.display = "none";
-
+        this.cropFinished = true;
       };
-
-
-      
-
-      // this.renderer.appendChild(this.canvasContainer.nativeElement, convertedCanvas);
-      // document.getElementById("canvasContainer").style.display = "block";
     });
   }
 
