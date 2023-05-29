@@ -74,19 +74,7 @@ export class ImageBuilderComponent implements OnInit {
     // Perform desired action or launch a function
     // For example, you can call another method or navigate to a different route
     // Here's an example of calling a function:
-    this.processCroppedImage();
-  }
-
-  processCroppedImage() {
-    const base64ImageUrl = this.croppedImage;
-    const byteCharacters = atob(base64ImageUrl.split(',')[1]);
-    const byteArrays = [];
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteArrays.push(byteCharacters.charCodeAt(i));
-    }
-    const byteArray = new Uint8Array(byteArrays);
-    const blob = new Blob([byteArray], { type: 'image/png' });
-    saveAs(blob, 'vulvatar.png');
+    this.downloadImage();
   }
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
@@ -293,11 +281,19 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   shareImage() {
-
+    console.log("sharing image");
   }
 
   downloadImage() {
-
+    const base64ImageUrl = this.croppedImage;
+    const byteCharacters = atob(base64ImageUrl.split(',')[1]);
+    const byteArrays = [];
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteArrays.push(byteCharacters.charCodeAt(i));
+    }
+    const byteArray = new Uint8Array(byteArrays);
+    const blob = new Blob([byteArray], { type: 'image/png' });
+    saveAs(blob, 'vulvatar.png');
   }
 
 }
