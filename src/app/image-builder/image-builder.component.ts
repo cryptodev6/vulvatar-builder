@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
 import { imageMap } from './imageMap';
 import html2canvas from 'html2canvas';
 
@@ -46,6 +47,40 @@ export class ImageBuilderComponent implements OnInit {
       "selectedId": null
     }
   ];
+
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+  cropFinished: boolean = false;
+  imageFile: any = '';
+  imageBase64: any = '';
+
+  fileChangeEvent(event: any): void {
+
+  }
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+  }
+  imageLoaded(image: LoadedImage) {
+      // show cropper
+  }
+  cropperReady() {
+      // cropper ready
+  }
+  loadImageFailed() {
+      // show message
+  }
+  onCropConfirm() {
+    // Perform desired action or launch a function
+    // For example, you can call another method or navigate to a different route
+    // Here's an example of calling a function:
+    this.processCroppedImage();
+  }
+
+  processCroppedImage() {
+    // This is a placeholder function, replace it with your actual logic
+    console.log('Cropped image processed.');
+    // Perform any further actions or function calls here
+  }
 
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
@@ -226,6 +261,7 @@ export class ImageBuilderComponent implements OnInit {
       document.getElementById("canvas").style.display = "none";
       const dataURL = convertedCanvas.toDataURL();
       const image = new Image();
+
       image.src = dataURL;
       image.style.height="350px";
       image.style.position="absolute";
@@ -235,6 +271,20 @@ export class ImageBuilderComponent implements OnInit {
       image.style.zIndex ="-1";
       document.getElementById("canvasContainer").appendChild(image);
       document.getElementById("canvasContainer").style.display = "block";
+
+
+      image.onload = () => {
+        console.log("dataURL", dataURL);
+        this.imageBase64 = dataURL;
+        this.croppedImage = dataURL;
+        document.getElementById("image-cropper").style.display = "block";
+        document.getElementById("image-cropper").style.padding = "0px";
+        document.getElementById("canvasContainer").style.display = "none";
+
+      };
+
+
+      
 
       // this.renderer.appendChild(this.canvasContainer.nativeElement, convertedCanvas);
       // document.getElementById("canvasContainer").style.display = "block";
