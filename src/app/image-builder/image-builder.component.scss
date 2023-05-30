@@ -86,22 +86,33 @@
 }
 
 #image-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
   padding: 16px;
-  height: 39vh !important;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  height: 180px; /* Adjust the height to fit two rows with margins */
 }
 
 .image-selector {
-  width: 72px;
+  flex: 0 0 50%; /* Occupy 50% of the container width */
+  width: 50%;
+  max-width: 72px; /* Limit the width to a maximum of 72px */
   height: 80px;
   background-color: rgb(254, 230, 240);
   margin: 3px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
+.image-selector img {
+  max-width: 100%; /* Ensure the image fits within the container */
+  max-height: 100%;
+  object-fit: contain; /* Preserve aspect ratio and fit the image within the container */
+}
+
 
 #canvas-container {
   position: relative;
