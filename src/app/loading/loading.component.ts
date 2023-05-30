@@ -12,7 +12,7 @@ export class LoadingComponent implements OnInit {
   constructor(private router: Router) {
     setTimeout(() => {
       this.router.navigateByUrl(this.redirectTo);
-    }, 1000);
+    }, 3000);
   }
 
   ngOnInit(): void {
