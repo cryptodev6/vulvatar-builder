@@ -10,7 +10,14 @@ interface ImageMap {
     imageUrl: string
   }[];
 }
+/*
+- Agregar fondos - Extras imagenes
+- Eliminar cropping
+- Para votar se necesita facebook login 
+- Animacion de spotify en landing page https://spotify.design/
 
+
+*/
 @Component({
   selector: 'app-image-builder',
   templateUrl: './image-builder.component.html',
@@ -46,7 +53,11 @@ export class ImageBuilderComponent implements OnInit {
     {
       "category": "color_piel",
       "selectedId": null
-    }
+    },
+    {
+      "category": "fondos",
+      "selectedId": null
+    },
   ];
 
   imageChangedEvent: any = '';
@@ -199,6 +210,10 @@ export class ImageBuilderComponent implements OnInit {
       },
       {
         "category": "accesorios",
+        "selectedId": null
+      },
+      {
+        "category": "fondos",
         "selectedId": null
       },
       {

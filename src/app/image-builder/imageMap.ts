@@ -82,14 +82,17 @@ export const imageMap: ImageMap = {
     {id: "color_piel16", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/06.png'},
     {id: "color_piel17", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/07.png'},
     {id: "color_piel18", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/08.png'}
+  ],
+  fondos: [
+    {id: "fondos1", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/01.png'},
+    {id: "fondos2", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/02.png'},
+    {id: "fondos3", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/03.png'},
+    {id: "fondos4", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/04.png'},
+    {id: "fondos5", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/05.png'},
+    {id: "fondos6", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/06.png'},
+    {id: "fondos7", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/07.png'},
+    {id: "fondos8", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/08.png'},
+    {id: "fondos9", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/09.png'},
+    {id: "fondos10", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/10.png'}
   ]
 };
-
-// TODO no se que es COLOR_PIEL_PSI --- 
-// TODO no se que es EXTRAS_Fondos_Vulvatars --- Agregar nueva categoria y poner eso
-// TODO cuales son los valores por defecto que cargan la primera vez --- pendiente por diseño
-// TODO me faltan las imagenes que van en el selector (vagina, labios, clitoris, etc..) -- pendeinte por diseño
-// TODO en el image grid hay algun hover con la seleccion para que el usuario sepa que ha seleccionado? -- color exacto por diseño
-
-//TODO interno: falta el selector de menu
-// TODO faltan los componentes de tacho, regresar y siguiente

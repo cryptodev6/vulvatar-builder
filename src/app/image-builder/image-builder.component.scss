@@ -150,7 +150,7 @@
 
 #save-button {
   position: absolute;
-  top: 290px;
+  top: 46vh;
   right: 20px;
   cursor: pointer;
   background-color: transparent;
@@ -159,6 +159,7 @@
   border-radius: 5px;
   color: #fFF;
   padding: 6px;
+  z-index: 1000;
 }
 
 .button {

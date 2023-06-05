@@ -62,6 +62,12 @@
           Piel
         </div>
       </div>
+      <div class="category" (click)="loadImages('fondos')">
+        <img class="icono" src="assets/iconos_builder/tonos de piel.png">
+        <div class="category-text" [ngClass]="{'selected': selectedCategory === 'fondos'}">
+          Fondos
+        </div>
+      </div>
     </div>
     <div id="image-grid">
       <img *ngFor="let image of images" [id]="'image-' + image.id" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
