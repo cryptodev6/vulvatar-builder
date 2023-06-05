@@ -1,17 +1,14 @@
 <div class="main-container">
   <div class="image-builder">
     <image-cropper
-        [imageChangedEvent]="imageChangedEvent"
-        [maintainAspectRatio]="true"
-        [aspectRatio]="4 / 3"
-        format="png"
-        [imageBase64]="imageBase64"
-        (imageCropped)="imageCropped($event)"
-        (imageLoaded)="imageLoaded($event)"
-        (cropperReady)="cropperReady()"
-        (loadImageFailed)="loadImageFailed()"
-        id="image-cropper"
-    ></image-cropper>
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageLoaded)="imageLoaded($event)"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+    id="image-cropper"></image-cropper>
     <div id="canvas" #canvas>
       <button id="reset-button" (click)="reset()">
         <img class="icono" src="assets/iconos_builder/iconos/bote_basura.png">

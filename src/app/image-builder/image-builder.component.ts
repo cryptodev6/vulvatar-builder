@@ -253,13 +253,13 @@ export class ImageBuilderComponent implements OnInit {
     });
     this.transformDivToCanvas("canvas");
 
-    /*if (missingCategories.length === 0) {
+    if (missingCategories.length === 0) {
       console.log("selectedImages", this.selectedImages);
       // Perform the desired action or redirect here
     } else {
       alert("Para guardar el vulvatar tienes que seleccionar obligatoriamente vagina, clitoris y labios");
       // Display error message or perform any other error handling
-    }*/
+    }
   }
 
   transformDivToCanvas(divId: string) {
@@ -284,9 +284,9 @@ export class ImageBuilderComponent implements OnInit {
       image.onload = () => {
         this.imageBase64 = dataURL;
         this.croppedImage = dataURL;
-        document.getElementById("image-cropper").style.display = "block";
+        document.getElementById("image-cropper").style.display = "none";
         document.getElementById("image-cropper").style.padding = "0px";
-        document.getElementById("canvasContainer").style.display = "none";
+        document.getElementById("canvasContainer").style.display = "block";
         document.getElementById("category-selector").style.display = "none";
         document.getElementById("image-grid").style.display = "none";
         document.getElementById("vulvatar-confirmation").style.display = "block";
