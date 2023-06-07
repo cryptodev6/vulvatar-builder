@@ -1,5 +1,16 @@
 .gallery {
   text-align: center;
+  background-color: #6c58ce;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-image: url(/assets/VAGINA_morada.png);
+  background-size: auto 58%;
+  background-position-x: left;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif !important;
+  color: #fff;
 }
 
 header {
@@ -19,10 +30,31 @@ header {
 
 main {
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.gallery-text {
+  font-size: 17px;
+  margin-bottom: 20px;
+  font-weight: normal !important;
+}
+
+.gallery-description {
+  font-size:20px;
+  font-weight: bold;
 }
 
 .content {
   text-align: center;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 h1 {
@@ -41,15 +73,35 @@ img.horizontal-image {
   margin-top: 20px;
 }
 
+.next-content {
+  text-align: left;
+  font-size: 16px;
+  font-weight: normal;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.select-button-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 30px;
+}
+
 .select-button {
   display: block;
-  margin: 30px auto;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #f2f2f2;
-  border: none;
-  border-radius: 4px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
   cursor: pointer;
+  margin-left: 5%;
 }
 
 .gallery-sections {
