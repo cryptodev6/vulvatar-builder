@@ -11,6 +11,8 @@
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif !important;
   color: #fff;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 header {
@@ -104,19 +106,23 @@ img.horizontal-image {
   margin-left: 5%;
 }
 
+/* Default styles for all devices */
 .gallery-sections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   margin-top: 30px;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .gallery-section {
-  width: 300px;
-  margin: 20px;
-  padding: 10px;
-  background-color: #f2f2f2;
+  float: left;
+  width: calc(46% - 2%);
+  margin-bottom: 2%;
+  background-color: transparent;
+  border: 1px solid black;
   border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
