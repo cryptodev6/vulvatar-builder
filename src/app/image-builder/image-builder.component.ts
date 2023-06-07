@@ -16,6 +16,8 @@ interface ImageMap {
 - Para votar se necesita facebook login 
 - Animacion de spotify en landing page https://spotify.design/
 
+- Orden de jerarquia segun el selector
+
 
 */
 @Component({

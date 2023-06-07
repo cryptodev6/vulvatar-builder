@@ -1,0 +1,101 @@
+.gallery {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  /* Add styles for the logo */
+}
+
+.breadcrumb {
+  /* Add styles for the breadcrumb */
+}
+
+main {
+  margin-top: 50px;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+img.horizontal-image {
+  max-width: 100%;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+.select-button {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gallery-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.gallery-section {
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.gallery-section img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.gallery-section p {
+  margin-top: 10px;
+}
+
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-media-links a {
+  display: inline-block;
+  margin: 0 5px;
+  color: #333;
+}
+
+.vote-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
