@@ -35,7 +35,7 @@
 				  <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></a>
 				  <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
 	      </div>
-	      <button class="vote-button">VOTAR AHORA</button>
+	      <button (click)="openPopup()" class="vote-button">VOTAR AHORA</button>
 	    </div>
 	    <div class="gallery-section">
 	      <img src="/assets/example_vulvavatar.png" alt="Example Vulvavatar">
@@ -45,8 +45,9 @@
 				  <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></a>
 				  <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
 	      </div>
-	      <button class="vote-button">VOTAR AHORA</button>
+	      <button (click)="openPopup()" class="vote-button">VOTAR AHORA</button>
 	    </div>
 		</div>
   </div>
 </div>
+<app-popup *ngIf="showPopup" (closePopup)="closePopup()"></app-popup>

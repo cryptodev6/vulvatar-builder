@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+  showPopup: boolean = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  openPopup() {
+    console.log("open popup");
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
   }
 
 }

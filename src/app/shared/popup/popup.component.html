@@ -1,0 +1,13 @@
+<div class="popup" *ngIf="showPopup">
+  <h2>Login/Register</h2>
+  <form (ngSubmit)="login()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+  <button class="close-button" (click)="closePopup()">Close</button>
+</div>
