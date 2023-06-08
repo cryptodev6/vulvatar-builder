@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation  } from '@angular/core';
 import { MockLoginService } from '../services/mock-login.service';
 
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
-  styleUrls: ['./popup.component.scss']
+  styleUrls: ['./popup.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PopupComponent {
   showPopup: boolean = true;
