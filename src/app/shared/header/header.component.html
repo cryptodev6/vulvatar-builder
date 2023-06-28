@@ -1,0 +1,38 @@
+<header>
+  <div class="logo">
+    <img src="/assets/logo--canestent.png" alt="main--logo" class="main--logo">
+  </div>
+  <div class="breadcrumb">
+  </div>
+  <div class="user--account">
+    <div class="user--div" *ngIf="isLoggedIn()">
+    <!-- <div class="user--div"> -->
+      <img src="/assets/user--icon.png" alt="user--icon" class="icon--user"><span class="user--name">{{getUserName()}}</span>
+      <!-- <span class="user--name">shivakar</span><img src="/assets/user--icon.png" alt="user--icon" class="icon--user"> -->
+    </div>
+  </div>
+
+  <div class="toggle" id="nav--toggle" [class.active--toggle]="isNavActive" (click)="toggleNav()">
+    <div class="togggle--icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- <button id="nav--toggle" (click)="toggleNav()" [class.active--toggle]="isNavActive">
+    Toggle
+  </button>
+  <div id="navbar-fixed" [class.active--nav]="isNavActive">
+    Navbar Content
+  </div> -->
+
+  <nav class="main--navbar" id="navbar-fixed" [class.active--nav]="isNavActive">
+    <ul>
+      <li><a routerLink="/image-builder">Image Builder</a></li>
+      <li><a routerLink="/gallery">Gallery</a></li>
+      <li *ngIf="isLoggedIn()"><a (click)="handleLogout()">Logout</a></li>
+      <li *ngIf="!isLoggedIn()" (click)="handleLoginModal()"><a >Login</a></li>
+    </ul>
+  </nav>
+</header>

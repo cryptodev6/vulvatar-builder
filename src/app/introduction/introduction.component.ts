@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MockLoginService } from '../shared/services/mock-login.service';
 
 @Component({
   selector: 'app-introduction',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./introduction.component.scss']
 })
 export class IntroductionComponent implements OnInit {
-  constructor(private router: Router) {
+  constructor(private router: Router , public mockLoginService : MockLoginService) {
   }
 
   ngOnInit(): void {

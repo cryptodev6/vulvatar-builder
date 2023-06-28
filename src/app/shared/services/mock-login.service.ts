@@ -1,15 +1,28 @@
+
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockLoginService {
-  login(username: string, password: string): Promise<boolean> {
-    // Simulate an asynchronous API call
-    return new Promise((resolve) => {
-      // Mock login logic
-      const isAuthenticated = username === 'admin' && password === 'password';
-      resolve(isAuthenticated);
-    });
+  private apiUrl = environment.apiUrl 
+  showModal : boolean = false
+  
+  constructor(private http: HttpClient) {
+    // Set the authorization header with the provided token
+  }
+
+  voteForContest(payload: any): Observable<any> {
+    const jwtToken = localStorage.getItem('token')
+    const headers = {
+      'authorization' : jwtToken,
+      }
+    return this.http.post<any>(`${this.apiUrl}/contest/vote`, payload,  {headers} );
   }
 }
+

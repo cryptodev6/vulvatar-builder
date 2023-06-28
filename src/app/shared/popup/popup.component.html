@@ -1,13 +1,73 @@
-<div class="popup" *ngIf="showPopup">
-  <h2>Login/Register</h2>
-  <form (ngSubmit)="login()">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+<div  *ngIf="!isLoggedIn()" class="popup">
+  <div class="form--popup">
+    <div class="popup--login--header">
+      <div class="header-col login-link">
+        <p (click)="handleShowSignin()" [class.active--form]="showSigninForm">Log in</p>
+      </div>
+      
+      <div class="header-col">
+        <p (click)="handleShowSignup()" [class.active--form]="showSignupForm"> Sign up</p>
+      </div>
+      <div class="header-col">
+        <img src="/assets/close--icon.png" alt="close--popup" (click)="mockLoginService.showModal=false" class="close--pop--icon">
+      </div>
+    </div>
+    <form *ngIf="showSigninForm" (ngSubmit)="login()">
+      <div class="form--description">
+        <p>para continuar debes estar registrada en canesten v<span class="sub-text">®</span></p>
+      </div>
+      <!-- <label for="username">Username:</label> -->
+      <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Introduce tu correo electrónico" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      <!-- <label for="password">Password:</label> -->
+      <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Ingresa tu contraseña" required>
 
-    <button type="submit">Login</button>
-  </form>
-  <button class="close-button" (click)="closePopup()">Close</button>
+      <div class="remeber--login">
+        <label class="main-d-rember"><input type="checkbox" ><span class="checkmark"></span> Recordar</label>
+      </div>
+      <div class="submit--btn">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <form *ngIf="showSignupForm" (ngSubmit)="signup()">
+      <div class="form--description">
+        <p>para continuar debes estar registrada en canesten v<span class="sub-text">®</span></p>
+      </div>
+      <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Introduzca su nombre" required >
+      <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Introduce tu correo electrónico" required >
+      <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Ingresa tu contraseña" required>
+      <input type="password" id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password" placeholder="Ingrese su contraseña de confirmación" required>
+      <div class="submit--btn">
+        <button type="submit">CREAR MI CUENTA</button>
+      </div>
+      <div class="text--login-if">
+        <a href="#" class="red--text">Ya tienes una cuenta?</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div  *ngIf="isLoggedIn()" class="popup review--popup">
+  <div class="form--popup">
+    <div class="popup--login--header bg-red">
+        <div class="header-col">
+        <p><a> VOTO EXITOSO </a> </p>
+        </div>
+        <div class="header-col">
+        <img src="/assets/close--icon.png" alt="close--popup" (click)="mockLoginService.showModal=false"  class="close--pop--icon">
+        </div>
+    </div>
+    <div class="content--review">
+    <h2>Felicidades,</h2>
+    <p>además de votar por tu Vulvávatar favorita estás ayudando a normalizar nuestros genitales</p>
+    </div>
+    <div class="social--share--review">
+    <p>Comparte con tus amigos</p>
+    <div class="social-media-links--review">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://upload.wikimedia.org/wikipedia/commons/8/82/Facebook_icon.jpg" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+  </div>
 </div>

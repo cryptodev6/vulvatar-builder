@@ -1,3 +1,6 @@
+<div class="main--header">
+  <app-header></app-header>
+</div>
 <div class="main-container">
   <div class="image-builder">
     <image-cropper
@@ -16,12 +19,14 @@
       <button id="return-button" (click)="returnImage()">
         <img class="icono" src="assets/iconos_builder/iconos/rehacer.png">
       </button>
-      <button id="save-button" class="button" (click)="saveImage()">
+      <button id="save-button" type="button" class="button" (click)="saveImage()">
         Siguiente
       </button>
     </div>
     <div id="canvasContainer" #canvasContainer>
     </div>
+    <app-popup *ngIf="mockLoginService.showModal"></app-popup>
+
     <div class="category-selector" id="category-selector">
       <div class="category" (click)="loadImages('vagina')">
         <img class="icono" src="assets/iconos_builder/vagina.png">
@@ -70,16 +75,36 @@
       <img *ngFor="let image of images" [id]="'image-' + image.id" (click)="selectImage(image)" [src]="image.imageUrl" class="image-selector">
     </div>
     <div id="vulvatar-confirmation">
-      <p class="finish-text">¿Que deseas hacer con tu Vulvávatar?</p>
-      <div class="vulvatar-confirmation-button-container">
-        <button id="save-button-confirmation" class="button" (click)="shareImage()">
-          Compartir
-        </button>
-        <button id="download-button-confirmation" class="button" (click)="downloadImage()">
-          Descargar
-        </button>
+      <div class="confirmation--inner">
+        <p class="finish-text">Que deseas hacer con tu Vulvávatar?</p>
+        <div class="vulvatar-confirmation-button-container">
+          <button *ngIf="isLoggedIn()" id="save-button-confirmation" class="button social-with-btn" (click)="shareImage()">
+            <div class="social-media-links">
+              <a href="https://www.facebook.com/yourpage" target="_blank"><i
+                  class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/youraccount" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+            <span>Compartir</span>
+          </button>
+          <button id="save-button-confirmation" class="button social-with-btn"  *ngIf="!isLoggedIn()" (click)="mockLoginService.showModal=true">
+            <div class="social-media-links">
+                <span><i class="fab fa-facebook-f"></i></span>
+                <span href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></span>
+                <span href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></span>
+            </div>
+            <span>Compartir</span>
+          </button>
+          <button id="download-button-confirmation" class="button btn--icon" (click)="downloadImage()">
+            <span class="icon--download"><img class="icono" src="assets/download--icon.png"></span>
+            <span>Descargar</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
   
+
+<app-footer></app-footer>

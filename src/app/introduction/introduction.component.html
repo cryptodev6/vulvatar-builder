@@ -1,4 +1,7 @@
-<div class="container">
+<div class="main--header">
+  <app-header></app-header>
+</div>
+<div class="container pt-80">
   <div class="content">
     <h1>VAGINA, LABIOS,<br>CLÍTORIS Y MUCHAS<br>MÁS COSAS.</h1>
     <h2>Aquí encontrarás las herramientas necesarias <br>para poder crear tu <b>VULVATAR</b></h2>
@@ -6,4 +9,9 @@
     	<div class="button" (click)="redirectToAnotherRoute()">Comenzar</div>
     </div>
   </div>
+  
+  <app-popup *ngIf="mockLoginService.showModal"></app-popup>
+
 </div>
+
+<app-footer></app-footer>

@@ -3,6 +3,10 @@ import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
 import { saveAs } from 'file-saver';
 import { imageMap } from './imageMap';
 import html2canvas from 'html2canvas';
+import { MockLoginService } from '../shared/services/mock-login.service';
+import { ImageBuilderService } from '../shared/services/image-builder.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 interface ImageMap {
   [category: string]: {
@@ -90,7 +94,12 @@ export class ImageBuilderComponent implements OnInit {
     this.downloadImage();
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(
+    private el: ElementRef, private renderer: Renderer2,
+    public mockLoginService : MockLoginService ,
+    public imageBuilderService : ImageBuilderService ,
+
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.loadImages('color_piel');
@@ -100,6 +109,10 @@ export class ImageBuilderComponent implements OnInit {
 
   ngAfterViewInit(): void {
     const containerElement = this.canvasContainer.nativeElement;
+  }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 
   loadImages(category: keyof ImageMap) {
@@ -165,7 +178,7 @@ export class ImageBuilderComponent implements OnInit {
     img.src = imageUrl;
     img.id = imageId;
     img.style.position = 'absolute';
-    img.style.height = '350px';
+    img.style.height = '450px';
     img.style.width = '100%';
     img.style.top = '0px';
     img.style.pointerEvents = "none";
@@ -220,7 +233,7 @@ export class ImageBuilderComponent implements OnInit {
       },
       {
         "category": "color_piel",
-        "selectedId": "color_piel15"
+        "selectedId": ""
       }
     ];
     const canvas = this.el.nativeElement.querySelector('#canvas');
@@ -248,19 +261,14 @@ export class ImageBuilderComponent implements OnInit {
 
   saveImage() {
     const requiredCategories = ['vagina', 'labios', 'clitoris'];
-
     // Check if all required categories are selected
     const missingCategories = requiredCategories.filter(category => {
       return !this.selectedImages.find(image => image.category === category && image.selectedId !== null);
     });
-    this.transformDivToCanvas("canvas");
-
-    if (missingCategories.length === 0) {
-      console.log("selectedImages", this.selectedImages);
-      // Perform the desired action or redirect here
+       if (missingCategories.length === 0) {
+      this.transformDivToCanvas("canvas");
     } else {
-      alert("Para guardar el vulvatar tienes que seleccionar obligatoriamente vagina, clitoris y labios");
-      // Display error message or perform any other error handling
+      this.toastr.error("Para guardar el vulvatar tienes que seleccionar obligatoriamente vagina, clitoris y labios", 'Error');
     }
   }
 
@@ -275,7 +283,7 @@ export class ImageBuilderComponent implements OnInit {
       const dataURL = convertedCanvas.toDataURL();
       const image = new Image();
       image.src = dataURL;
-      image.style.height="350px";
+      image.style.height="450px";
       image.style.position="absolute";
       image.style.width="100%";
       image.style.top="0px";
@@ -298,7 +306,40 @@ export class ImageBuilderComponent implements OnInit {
   }
 
   shareImage() {
-    console.log("sharing image");
+    const base64ImageUrl = this.croppedImage;
+    const byteCharacters = atob(base64ImageUrl.split(',')[1]);
+    const byteArrays = [];
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteArrays.push(byteCharacters.charCodeAt(i));
+    }
+    const byteArray = new Uint8Array(byteArrays);
+    const blob = new Blob([byteArray], { type: 'image/png' });
+    const file = new File([blob], 'image.jpg', { type: 'image/jpeg' });
+    console.log('Blob' , blob)
+    console.log('File' , file)
+
+    const formData = new FormData()
+    formData.append('vulvavatar_image' , file)
+    formData.append('name' , 'test image')
+    this.imageBuilderService.uploadShareImage(formData).subscribe(
+      response => {
+        console.log('response' , response);
+        if(response.status === 1){
+          this.toastr.success(response.message, 'Success');
+          const share_url = response.data.photo_url
+          const image_name = response.data.name
+          console.log("share_url" ,share_url)
+        }
+        else{
+          this.toastr.error(response.message, 'Error');
+        }
+      },
+      error => {
+        const errmsg = error.error.error || error.error.message || 'Somthing went wrong'
+        this.toastr.error(errmsg, 'Error');
+      }
+    );
+
   }
 
   downloadImage() {

@@ -1,0 +1,32 @@
+.footer--galery {
+  font-family: 'Montserrat';
+  overflow: hidden;
+}
+
+.footer--galery h2 {
+  margin-top: 0px;
+  transform: rotate(356deg);
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.footer-content > .copy-ff {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-content > .copy-ff .white--text {
+  font-size: 8px;
+}
+
+.footer-content > .copy-ff img {
+  width: 40px;
+}
+.footer--image img {
+  width: 100%;
+}
+.text--border {
+-webkit-text-stroke: 1px #ed0000;
+-webkit-text-fill-color: transparent;
+font-family: sans-serif;
+}

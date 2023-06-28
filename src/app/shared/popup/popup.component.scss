@@ -59,3 +59,210 @@
   margin-top: 10px;
   background-color: #dc3545;
 }
+
+
+.white--color {
+  color: #fff;
+  text-decoration: none;
+}
+
+.form--popup {
+  background: #ffa8c8;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 85%;
+  font-family: 'Montserrat';
+}
+
+.form--popup > .popup--login--header {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form--popup > form {
+  background: #fe6eac !important;
+  padding: 25px !important;
+}
+
+.form--popup > form > input {
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 0px;
+  font-size: 18px;
+  color: #fff;
+  font-family: 'Montserrat';
+}
+.sub-text {
+  font-size: 12px;
+  position: relative;
+  top: -6px;
+}
+.form--popup > form > input:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+.form--popup > form > input::placeholder {
+  color: #fff;
+}
+
+.form--popup > form > .form--description {
+  padding: 0px 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.form--popup > form > .form--description > p {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 0px;
+  color: #fff;
+}
+
+.form--popup > .popup--login--header p {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.form--popup > .popup--login--header p.active--form {
+  color: #ed0000;
+  text-decoration: underline;
+}
+
+.form--popup > .popup--login--header .close--pop--icon {
+  cursor: pointer;
+  width: 30px;
+}
+.remeber--login {
+  margin-top: 10px;
+}
+
+.main-d-rember {
+  display: flex !important;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+}
+
+.main-d-rember input {
+  width: auto !important;
+  margin-bottom: 0px;
+  margin-right: 22px;
+}
+
+.main-d-rember .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  aspect-ratio: 1 / 1;
+  background-color: #fe6eac;
+  outline: 1px solid #ed0000;
+  border-radius: 3px;
+}
+
+.main-d-rember input:checked ~ .checkmark {
+background-color: #ed0000;
+}
+
+.main-d-rember .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.main-d-rember input:checked ~ .checkmark:after {
+display: block;
+}
+
+.main-d-rember .checkmark:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+.form--popup > form > .submit--btn {
+  text-align: center;
+}
+
+.form--popup > form > .submit--btn > button[type="submit"] {
+  background: #ed0000;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  margin: 20px 0px;
+}
+
+.bg-red {
+  background: #ed0000;
+}
+.review--popup .form--popup > .popup--login--header p {
+  color: #fff;
+}
+
+.review--popup .form--popup > .popup--login--header .close--pop--icon {
+  filter: brightness(0) invert(1);
+}
+
+.review--popup  .social--share--review {
+  background: #ed0000;
+  padding: 20px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.review--popup .content--review {
+  padding: 20px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.review--popup .content--review p {
+  font-size: 12px;
+}
+
+.review--popup .content--review h2 {
+  margin-bottom: 6px;
+  color: #6c58ce;
+}
+
+.review--popup .social--share--review > p {text-align: center;color: #fff;font-weight: 700;font-size: 12px;}
+
+.review--popup .social--share--review > .social-media-links--review {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.review--popup .social--share--review > .social-media-links--review > a {
+  color: #fff;
+}
+
+.review--popup .social--share--review > .social-media-links--review > a > i {
+  background: #fff;
+  width: 18px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ed0000;
+}
+
+.review--popup .form--popup > .popup--login--header {
+  border-radius: 5px 5px 0px 0px;
+}

@@ -84,15 +84,15 @@ export const imageMap: ImageMap = {
     {id: "color_piel18", imageUrl: '../assets/VULVATAR_ELEMENTOS/COLOR_PIEL_PSI/08.png'}
   ],
   fondos: [
-    {id: "fondos1", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/01.png'},
-    {id: "fondos2", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/02.png'},
-    {id: "fondos3", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/03.png'},
-    {id: "fondos4", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/04.png'},
-    {id: "fondos5", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/05.png'},
-    {id: "fondos6", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/06.png'},
-    {id: "fondos7", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/07.png'},
-    {id: "fondos8", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/08.png'},
-    {id: "fondos9", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/09.png'},
-    {id: "fondos10", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/10.png'}
+    {id: "fondos1-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/01.png'},
+    {id: "fondos2-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/02.png'},
+    {id: "fondos3-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/03.png'},
+    {id: "fondos4-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/04.png'},
+    {id: "fondos5-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/05.png'},
+    {id: "fondos6-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/06.png'},
+    {id: "fondos7-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/07.png'},
+    {id: "fondos8-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/08.png'},
+    {id: "fondos9-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/09.png'},
+    {id: "fondos10-fondo", imageUrl: '../assets/VULVATAR_ELEMENTOS/EXTRAS_Fondos_Vulvatars/10.png'}
   ]
 };

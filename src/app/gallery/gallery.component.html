@@ -1,53 +1,77 @@
-<div class="gallery">
-  <header>
-    <div class="logo">
-      <!-- Your logo here -->
-    </div>
-    <div class="breadcrumb">
-      <!-- Horizontal menu breadcrumb here -->
-    </div>
-  </header>
-
-  <!-- Main part -->
-  <main>
-    <div class="content">
-      <h1 class="gallery-text">GALERÍA</h1>
-      <img class="img-responsive" src="/assets/logo vulvavatar.png" alt="Horizontal Image">
-      <p class="gallery-description">Cada vulva es como<br>una huella digital,<br><u>única y diferente.</u></p>
-    </div>
-    <div class="next-content">
-    	Aquí no solo podrás ver todas y cada una de los <br>
-    	vulvavatars generados por nuestrxs creadorxs. <br>
-    	También podrás seguir votando y compartiendo para <br>
-    	ser unx de nuestrxs ganadorxs NFT's y merch
-    </div>
-    <div class="select-button-container">
-		<button class="select-button">MÁS POPULAR</button>
-	</div>
-  </main>
-  <div class="gallery">
-  	<div class="gallery-sections">
-	    <div class="gallery-section">
-	      <img src="/assets/example_vulvavatar.png" alt="Example Vulvavatar">
-	      <p>130 VOTOS</p>
-	      <div class="social-media-links">
-	        <a href="https://www.facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
-				  <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></a>
-				  <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
-	      </div>
-	      <button (click)="openPopup()" class="vote-button">VOTAR AHORA</button>
-	    </div>
-	    <div class="gallery-section">
-	      <img src="/assets/example_vulvavatar.png" alt="Example Vulvavatar">
-	      <p>130 VOTOS</p>
-	      <div class="social-media-links">
-	        <a href="https://www.facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
-				  <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></a>
-				  <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
-	      </div>
-	      <button (click)="openPopup()" class="vote-button">VOTAR AHORA</button>
-	    </div>
-		</div>
-  </div>
+<div class="main--header">
+	<app-header></app-header>
 </div>
-<app-popup *ngIf="showPopup" (closePopup)="closePopup()"></app-popup>
+<div class="main--div">
+	<div class="gallery px-50 pt-80">
+		<!-- Main part -->
+		<div class="mt-0">
+			<div class="content">
+				<h1 class="gallery-text">GALERÍA</h1>
+				<img class="img-responsive" src="/assets/logo vulvavatar.png" alt="Horizontal Image">
+				<div class="heading-des">
+					<i class="fa fa-star red--text left--star"></i>
+					<p class="gallery-description">Cada vulva es como<br>una huella digital,<br><u>única y
+							diferente.</u></p>
+					<i class="fa fa-star red--text fa-2x right--star"></i>
+				</div>
+			</div>
+			<div class="next-content ml-0 mr-0 w-100 mt-50">
+				<p class="small--text"><b>Vota por tu Vulvávatar favorito.</b> Las ganadoras<br> obtendrán NFT's y merch
+					con sus Vulvávatars.</p>
+				<i class="fa fa-star cream--color trasform--star"></i>
+			</div>
+			<div class="select-button-container drop-down-div">
+				<button class="select-button link--dropdown ml-0" (click)="toggleDropdown()">MÁS POPULAR <span class="dropdown--icon">&#x2304;</span></button>
+					<div class="dropdown-menu-custom" [ngClass]="{ 'active--drop': isDropdownActive }">
+					<a class="dropdown-menu-item">MÁS POPULAR</a>
+					<a class="dropdown-menu-item">MÁS POPULAR</a>
+					<a class="dropdown-menu-item">MÁS POPULAR</a>
+					</div>
+			</div>
+		</div>
+		<div class="gallery gallery--main">
+			<div class="gallery-sections">
+				<div *ngFor="let item of allVulvavatars" class="gallery-section">
+					<img [src]="'http://localhost:4000' + item.photo_url.replace('public', '')" alt="Example Vulvavatar">
+					<p>{{item.voteCount}}</p>
+					<div class="social-media-links">
+						<a href="https://www.facebook.com/yourpage" target="_blank"><i
+								class="fab fa-facebook-f"></i></a>
+						<a href="https://www.instagram.com/youraccount" target="_blank"><i
+								class="fab fa-instagram"></i></a>
+						<a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
+					</div>
+					<button  *ngIf="!isLoggedIn()" (click)="mockLoginService.showModal=true" class="vote-button">VOTAR AHORA</button>
+					<button  *ngIf="isLoggedIn()" (click)="vote(item.id)" class="vote-button">VOTAR AHORA</button>
+				</div>
+			</div>
+		</div>
+		<button class="btn--common vote-button mb-left">CARGAR MÁS</button>
+	</div>
+	<i class="fa fa-star cream--color  after--btn"></i>
+</div>
+
+<app-popup *ngIf="mockLoginService.showModal"></app-popup>
+
+<div class="py-50 px-50 bg--purple">
+	<div class="content--bx">
+		<h2 class="white--text">¿Aún no tienes tu Vulvávatar?</h2>
+		<p class="white--text">¡No pierdas la oportunidad de sentirte libre y expresarte! Canesten V® sabe que cada
+			vulva es única y diferente. Crea tu Vulvávatar y participa para poder ganar NFT's y merch con tu diseño.</p>
+		<button class="btn--common vote-button mb-left">AQUí</button>
+	</div>
+</div>
+
+<div class="py-50 px-50 bg--yellow">
+	<div class="content--bx">
+		<h2 class="blue--text">DIA PACHECO</h2>
+		<p class="primary--text">Para ilustrar toda la variedad de vulvas que existen necesitábamos a alguien que se
+			atreviera a explorar, a plasmar el lado artístico y real de nuestros genitales, y la encontramos: Día
+			Pacheco, artista mexicana que abraza la sexualidad sin tabú y la convierte en arte.</p>
+	</div>
+</div>
+<div class="bg--yellow">
+	<img src="/assets/img-mb.png" class="w-100 block--img" alt="copy permisos">
+</div>
+
+<app-footer></app-footer>

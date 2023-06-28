@@ -1,13 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .gallery {
   text-align: center;
   background-color: #6c58ce;
   height: 100%;
   width: 100%;
-  text-align: center;
+  position: relative;
+  margin-bottom: -1px;
   background-image: url(/assets/VAGINA_morada.png);
   background-size: auto 58%;
-  background-position-x: left;
-  background-position-y: top;
+  background-position: left top;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif !important;
   color: #fff;
@@ -15,19 +20,8 @@
   flex-wrap: wrap;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.logo {
-  /* Add styles for the logo */
-}
-
-.breadcrumb {
-  /* Add styles for the breadcrumb */
+.w-100 {
+  width: 100% !important;
 }
 
 main {
@@ -48,7 +42,7 @@ main {
 }
 
 .gallery-description {
-  font-size:20px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -106,7 +100,6 @@ img.horizontal-image {
   margin-left: 5%;
 }
 
-/* Default styles for all devices */
 .gallery-sections {
   margin-top: 30px;
   float: left;
@@ -122,7 +115,6 @@ img.horizontal-image {
   margin-right: 2%;
   margin-bottom: 2%;
   background-color: transparent;
-  border: 1px solid black;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -152,16 +144,126 @@ img.horizontal-image {
 .vote-button {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #f2f2f2;
+  padding: 6px 15px;
+  font-size: 12px;
+  background-color: #ff3a85;
+  color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 700;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
 }
 
-.vote-button {
-  background-color: #ff3a85;
-  color: #fff;
+.drop-down-div {
+  position: relative;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ed0000;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 147px;
+  display: none;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Montserrat';
+  z-index: 1;
+}
+
+.dropdown-menu-custom.active--drop {
+  display: flex;
+}
+
+.dropdown-menu-custom > .dropdown-menu-item {
+  padding: 9px;
   text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.335s;
+}
+
+.dropdown-menu-custom > .dropdown-menu-item:hover {
+  background: #fff;
+  border-radius: 5px;
+  color: #ed0000;
+}
+
+.dropdown-menu-custom > .dropdown-menu-item:not(:last-child) {
+  border-bottom: 1px solid #fff;
+}
+
+.link--dropdown {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+  margin-left: 0;
+  font-weight: 900;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  padding: 8px 15px;
+}
+
+.link--dropdown > .dropdown--icon {
+  font-weight: bold;
+  font-family: 'Montserrat';
+  height: 12px;
+  line-height: 0;
+  font-size: 24px;
+  margin-top: -5px;
+}
+
+.heading-des {
+  position: relative;
+}
+
+.gallery--main > .gallery-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(10px, 3vw, 50px);
+}
+
+.gallery--main > .gallery-sections > .gallery-section {
+  width: 100%;
+  margin: 0;
+  p {
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .social-media-links {
+    margin-top: 5px;
+    
+    a {
+      color: #fff;
+      background: #fff;
+      width: 16px;
+      aspect-ratio: 1/1;
+      border-radius: 50px;
+      margin: 0 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 10px !important;
+      
+      i {
+        color: #6c58ce;
+      }
+    }
+  }
+  
+  button.vote-button {
+    font-size: 9px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    padding: 5px 15px;
+  }
 }

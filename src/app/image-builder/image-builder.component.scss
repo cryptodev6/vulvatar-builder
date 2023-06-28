@@ -1,6 +1,7 @@
 :host {
   overflow-y: hidden;
 }
+
 .main-container {
   font-family: 'Montserrat', sans-serif !important;
   overflow-y: hidden;
@@ -9,7 +10,7 @@
 .image-builder {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   overflow-y: hidden;
 }
 
@@ -38,12 +39,14 @@
 }
 
 #canvas {
-  height: 52vh;
+  // height: calc(54vh - 5px);
+  height: 450px;
   width: 100%;
+  position: relative;
 }
 
 #canvasContainer {
-  height: 350px;
+  height: 450px;
   width: 100%;
   display: none
 }
@@ -51,20 +54,26 @@
 #image-cropper {
   display: none;
 }
+
 #image-cropper-result {
   display: none;
 }
 
+#labios6 {
+  z-index: -1;
+}
+
 .red {
-  color: rgb(237,0,0);
+  color: rgb(237, 0, 0);
 }
 
 .category-selector {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  height: 9vh;
-  background-color: rgb(237,0,0);
+  // height: 9vh;
+  height: 90px;
+  background-color: rgb(237, 0, 0);
 }
 
 .category {
@@ -72,11 +81,11 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 16px;
+  padding: 0 10px;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: rgb(237,0,0);
+  background-color: rgb(237, 0, 0);
   color: #fff;
   flex-direction: column;
 }
@@ -90,13 +99,16 @@
   flex-wrap: wrap;
   overflow-x: auto;
   padding: 16px;
-  height: 180px; /* Adjust the height to fit two rows with margins */
+  height: 180px;
+  /* Adjust the height to fit two rows with margins */
 }
 
 .image-selector {
-  flex: 0 0 50%; /* Occupy 50% of the container width */
+  flex: 0 0 50%;
+  /* Occupy 50% of the container width */
   width: 50%;
-  max-width: 72px; /* Limit the width to a maximum of 72px */
+  max-width: 72px;
+  /* Limit the width to a maximum of 72px */
   height: 80px;
   background-color: rgb(254, 230, 240);
   margin: 3px;
@@ -108,9 +120,11 @@
 }
 
 .image-selector img {
-  max-width: 100%; /* Ensure the image fits within the container */
+  max-width: 100%;
+  /* Ensure the image fits within the container */
   max-height: 100%;
-  object-fit: contain; /* Preserve aspect ratio and fit the image within the container */
+  object-fit: contain;
+  /* Preserve aspect ratio and fit the image within the container */
 }
 
 
@@ -132,26 +146,28 @@
 
 #reset-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 70px;
+  right: 8px;
   cursor: pointer;
   background-color: transparent;
   border: 0px;
+  z-index: 1;
 }
 
 #return-button {
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 110px;
+  right: 8px;
   cursor: pointer;
   background-color: transparent;
   border: 0px;
+  z-index: 1;
 }
 
 #save-button {
   position: absolute;
-  top: 46vh;
-  right: 20px;
+  // top: 46vh;
+  right: 15px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #fff;
@@ -159,7 +175,8 @@
   border-radius: 5px;
   color: #fFF;
   padding: 6px;
-  z-index: 1000;
+  bottom: 10px;
+  z-index: 1;
 }
 
 .button {
@@ -171,14 +188,90 @@
   padding: 6px;
 }
 
-.finish-text {
+#vulvatar-confirmation>.confirmation--inner {
+  width: 83vw;
+  margin: 0 auto;
+}
+
+.btn--icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #f872a5 !important;
+  width: 100%;
+  max-width: 150px;
+}
+
+.btn--icon>span>img {
+  width: 20px !important;
+}
+
+.social-with-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 60px;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 150px;
+}
+
+.social-with-btn>.social-media-links>a {
+  color: #fff;
+  background: #fff;
+  width: 16px;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  margin: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 10px !important;
+}
+
+.social-with-btn>.social-media-links>span {
+  color: #fff;
+  background: #fff;
+  width: 16px;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  margin: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 10px !important;
+}
+
+.social-with-btn>.social-media-links {
+  display: flex;
+  justify-content: center;
+}
+
+.social-with-btn>.social-media-links>a>i {
+  color: #6c58ce;
+}
+
+.social-with-btn>.social-media-links>span>i {
+  color: #6c58ce;
+}
+
+#vulvatar-confirmation>.confirmation--inner>p.finish-text {
+  width: 100%;
+  max-width: 290px;
+  margin: 0 auto;
+  margin-bottom: 20px;
   font-size: 22px;
   font-weight: bold;
   text-align: center;
   color: #FFFFFF;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 #save-button-confirmation {
@@ -202,7 +295,7 @@
 
 #vulvatar-confirmation {
   display: none;
-  height: 48vh;
+  padding: 30px 0px;
   background-color: #ff0000;
 }
 
@@ -213,5 +306,6 @@
 }
 
 .vulvatar-confirmation-button-container button {
-  margin: 0 5px; /* Adjust the margin value as needed */
+  margin: 0 5px;
+  /* Adjust the margin value as needed */
 }
