@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '../../../environments/environment';
+const apiUrl = environment.apiUrl;
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
@@ -20,7 +21,7 @@ export class SignupModalComponent {
     this.errorMessage = ''; // Clear previous error message
 
     // Call the login API
-    this.http.post<any>('http://localhost:5000/sign-up', {name :  this.name , email: this.email, password: this.password })
+    this.http.post<any>(`${apiUrl}/sign-up`, {name :  this.name , email: this.email, password: this.password })
       .subscribe(
         response => {
           // Handle successful login

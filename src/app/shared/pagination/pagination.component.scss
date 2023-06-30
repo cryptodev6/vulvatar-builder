@@ -1,0 +1,60 @@
+.pagination--container {
+  width: 100%;
+}
+
+.pagination,
+.page-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pagination {
+  margin-top: 128px;
+}
+
+.btn-nav,
+.btn-page {
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-nav {
+  padding: 8px;
+}
+
+.btn-nav > svg {
+  width: 20px;
+}
+.btn-nav {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border: 1.5px solid #ff3a85;
+  color: #ffffff;
+  background-color: #ff3a85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-nav:hover,
+.btn-page:hover {
+  background-color: #ff3a85;
+  color: #fff;
+}
+
+.btn-page {
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Montserrat';
+}
+
+.btn-selected {
+  background-color: #ff3a85;
+  color: #fff;
+}

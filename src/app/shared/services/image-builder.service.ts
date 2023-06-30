@@ -25,11 +25,16 @@ export class ImageBuilderService {
   }
 
   getAllVulvavatars(): Observable<any> {
-    const jwtToken = localStorage.getItem('token')
-    const headers = {
-      'authorization' : jwtToken,
-      }
-    return this.http.get<any>(`${this.apiUrl}/all-vulvavatars`, );
+    return this.http.get<any>(`${this.apiUrl}/all-vulvavatars?limit=40&page=1`, );
   }
+
+  getFilteredVulvavatars(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/filtered-vulvavatars?orderBy=voteCount&sortOrder=DESC&limit=40&page=1`, );
+  }
+
+  getFilteredRecentVulvavatars(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/filtered-vulvavatars?orderBy=createdAt&sortOrder=DESC&limit=40&page=1`, );
+  }
+
 }
 

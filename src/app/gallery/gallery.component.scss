@@ -110,7 +110,7 @@ img.horizontal-image {
 
 .gallery-section {
   float: left;
-  width: 45%;
+  width: 100%;
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 2%;
@@ -118,11 +118,17 @@ img.horizontal-image {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
-}
+  
+  .gallery--image {
+      height: clamp(160px, 52vw, 800px);
 
-.gallery-section img {
-  width: 100%;
-  border-radius: 4px;
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+    }
+  }
+
 }
 
 .gallery-section p {
@@ -167,7 +173,7 @@ img.horizontal-image {
   top: 100%;
   display: flex;
   flex-direction: column;
-  background: #ed0000;
+  background: linear-gradient(45deg, #ffce45, #ff3a85);
   border-radius: 5px;
   width: 100%;
   max-width: 147px;
@@ -176,6 +182,7 @@ img.horizontal-image {
   font-weight: 700;
   font-family: 'Montserrat';
   z-index: 1;
+  overflow: hidden;
 }
 
 .dropdown-menu-custom.active--drop {
@@ -192,8 +199,7 @@ img.horizontal-image {
 
 .dropdown-menu-custom > .dropdown-menu-item:hover {
   background: #fff;
-  border-radius: 5px;
-  color: #ed0000;
+  color: #6c58ce;
 }
 
 .dropdown-menu-custom > .dropdown-menu-item:not(:last-child) {
@@ -230,7 +236,7 @@ img.horizontal-image {
   gap: clamp(10px, 3vw, 50px);
 }
 
-.gallery--main > .gallery-sections > .gallery-section {
+.gallery--main > .gallery-sections > .gallery-section > .gallery--bot {
   width: 100%;
   margin: 0;
   p {

@@ -15,6 +15,8 @@ import { ToastrModule } from 'ngx-toastr';
  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     PopupComponent,
     HeaderComponent,
     FooterComponent,
+    PaginationComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import html2canvas from 'html2canvas';
 import { MockLoginService } from '../shared/services/mock-login.service';
 import { ImageBuilderService } from '../shared/services/image-builder.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 interface ImageMap {
@@ -30,6 +31,7 @@ interface ImageMap {
   styleUrls: ['./image-builder.component.scss']
 })
 export class ImageBuilderComponent implements OnInit {
+  isLoading: boolean = false;
   images: any[] = [];
   userSelection: any = [];
   @ViewChild('canvasContainer', { static: true }) canvasContainer: ElementRef<HTMLDivElement>;
@@ -98,7 +100,7 @@ export class ImageBuilderComponent implements OnInit {
     private el: ElementRef, private renderer: Renderer2,
     public mockLoginService : MockLoginService ,
     public imageBuilderService : ImageBuilderService ,
-
+    private router: Router,
     private toastr: ToastrService) { }
 
   ngOnInit() {
@@ -328,6 +330,7 @@ export class ImageBuilderComponent implements OnInit {
           this.toastr.success(response.message, 'Success');
           const share_url = response.data.photo_url
           const image_name = response.data.name
+          this.router.navigate(['/gallery']);
           console.log("share_url" ,share_url)
         }
         else{
@@ -341,6 +344,35 @@ export class ImageBuilderComponent implements OnInit {
     );
 
   }
+
+  handleShareAndCreateVulvatar() {
+    // this.isLoading = true;
+    if (this.isLoggedIn()) {
+
+      // User is already logged in, directly create and share the Vulvávatar
+      this.shareImage();
+    this.isLoading = false;
+
+    } else {
+      // User is not logged in, show the login/signup popup
+      this.mockLoginService.showModal = true;
+  
+      // Subscribe to the login status changes only if not already subscribed
+      if (!this.mockLoginService.loginStatusChange.observers.length) {
+        this.mockLoginService.loginStatusChange.subscribe((loggedIn) => {
+          if (loggedIn) {
+            // User logged in successfully, create and share the Vulvávatar
+            this.shareImage();
+            this.isLoading = false;
+
+            
+          }
+        });
+      }
+    }
+  }
+  
+  
 
   downloadImage() {
     const base64ImageUrl = this.croppedImage;

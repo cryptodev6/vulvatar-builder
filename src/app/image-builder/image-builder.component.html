@@ -78,26 +78,13 @@
       <div class="confirmation--inner">
         <p class="finish-text">Que deseas hacer con tu Vulvávatar?</p>
         <div class="vulvatar-confirmation-button-container">
-          <button *ngIf="isLoggedIn()" id="save-button-confirmation" class="button social-with-btn" (click)="shareImage()">
-            <div class="social-media-links">
-              <a href="https://www.facebook.com/yourpage" target="_blank"><i
-                  class="fab fa-facebook-f"></i></a>
-                  <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/youraccount" target="_blank"><i
-                  class="fab fa-instagram"></i></a>
-            </div>
-            <span>Compartir</span>
-          </button>
-          <button id="save-button-confirmation" class="button social-with-btn"  *ngIf="!isLoggedIn()" (click)="mockLoginService.showModal=true">
-            <div class="social-media-links">
-                <span><i class="fab fa-facebook-f"></i></span>
-                <span href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i></span>
-                <span href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i></span>
-            </div>
+          <button id="save-button-confirmation" class="button social-with-btn" (click)="handleShareAndCreateVulvatar()">
             <span>Compartir</span>
           </button>
           <button id="download-button-confirmation" class="button btn--icon" (click)="downloadImage()">
-            <span class="icon--download"><img class="icono" src="assets/download--icon.png"></span>
+            <span class="icon--download">
+              <img class="icono" src="assets/download--icon.png">
+            </span>
             <span>Descargar</span>
           </button>
         </div>
@@ -108,3 +95,4 @@
   
 
 <app-footer></app-footer>
+<app-loader *ngIf="isLoading"></app-loader>

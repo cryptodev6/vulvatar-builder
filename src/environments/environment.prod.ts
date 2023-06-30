@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://vulvater-backend.onrender.com'
+  apiUrl: 'https://vulvavater-backend.onrender.com'
 };
